@@ -1,0 +1,461 @@
+body,
+html {
+    position: initial !important;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    background-color: #f5f5f5;
+}
+
+.theme-color {
+    color: #f76f0e;
+}
+
+.btn-primary {
+    background-color: #f76f0e;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e35502;
+    border: none;
+}
+
+.goog-te-banner-frame {
+    display: none;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../img/welcome-parallaxbg.jpg");
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-h1 {
+    padding-top: 80px;
+    width: 60%;
+    font-size: 60px;
+    font-weight: bold;
+    display: inline-block;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.parallax-h2 {
+    width: 60%;
+    font-size: 24px;
+    font-weight: 400;
+    display: inline-block;
+    color: #333333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.regheaderimg {
+    /* The image used */
+    background-image: url("../img/reg-header.jpg");
+    /* Full height */
+    height: 250px;
+    opacity: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reg-h1 {
+    padding-top: 125px;
+    color: rgb(255, 255, 255);
+    width: 60%;
+    font-size: 30px;
+    font-weight: bold;
+    display: inline-block;
+    padding-left: 50px;
+}
+
+.navbar {
+    background-color: transparent !important;
+    transition: background-color 400ms linear;
+}
+
+.navbar .nav-link {
+    color: #000 !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding-right: 25px !important;
+}
+
+.navbar .nav-link:hover {
+    color: #f76f0e !important;
+}
+
+.navbar .nav-link.active {
+    color: #f76f0e !important;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.scrolled {
+    background-color: #fff !important;
+    transition: background-color 1000ms linear;
+}
+
+.scrolled .nav-link {
+    color: #000 !important;
+}
+
+.header {
+    background: url("../img/Main/mbg28.jpg") center center fixed;
+    color: #FFF;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -msn-background-size: cover;
+    text-align: center;
+}
+
+.header .overlay {
+    background: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.home-form-position {
+    margin-top: 215px;
+}
+
+.home-registration-form {
+    background: rgb(255 255 255 / 50%);
+    border-radius: 8px;
+    width: 75%;
+    margin: auto;
+    padding: 20px;
+    margin-top: 70px;
+}
+
+.home-form-position .row {
+    --bs-gutter-x: 0;
+}
+
+
+/*select2 common styles*/
+
+.select2-selection__rendered {
+    line-height: 40px !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 42px !important;
+    border-color: #ced4da !important;
+}
+
+.select2-selection__arrow {
+    height: 38px !important;
+}
+
+ul.select2-results {
+    max-height: 100px;
+}
+
+.select2-selection {
+    text-align: left;
+}
+
+
+/*select2 common styles*/
+
+
+/*form elements*/
+
+.span1 {
+    margin: auto;
+    height: 42px;
+}
+
+.input-group-text {
+    height: 42px;
+    background-color: #fff;
+    border-right: none;
+    color: #999;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #999 !important;
+    font-weight: 300 !important;
+    opacity: 1;
+    /* Firefox */
+}
+
+ :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: 999 !important;
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: 999 !important;
+}
+
+
+/* Style the tab */
+
+.tab {
+    overflow: hidden;
+}
+
+
+/* Style the buttons that are used to open the tab content */
+
+.tab button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+    background-color: #ff8e3e;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+}
+
+.job-box {
+    -webkit-box-shadow: 0 -3px 31px 0 rgb(0 0 0 / 3%), 0 6px 20px 0 rgb(0 0 0 / 2%);
+    box-shadow: 0 -3px 31px 0 rgb(0 0 0 / 3%), 0 6px 20px 0 rgb(0 0 0 / 2%);
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.job-box:hover {
+    box-shadow: 4px 4px 8px 0px rgb(148 66 7 / 45%), 0 6px 20px 0 rgb(0 0 0 / 2%);
+}
+
+
+/* OVERRIDE GOOGLE TRANSLATE WIDGET CSS BEGIN */
+
+div#google_translate_element div.goog-te-gadget-simple {
+    border: none;
+    background-color: transparent;
+    /*background-color: #17548d;*/
+    /*#e3e3ff*/
+}
+
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value:hover {
+    text-decoration: none;
+}
+
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span {
+    color: #6b6b6b;
+}
+
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span:hover {
+    color: #f76f0e;
+}
+
+.goog-te-gadget-icon {
+    display: none !important;
+    /*background: url("url for the icon") 0 0 no-repeat !important;*/
+}
+
+
+/* Remove the down arrow */
+
+
+/* when dropdown open */
+
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style="color: rgb(213, 213, 213);"] {
+    display: none;
+}
+
+
+/* after clicked/touched */
+
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style="color: rgb(118, 118, 118);"] {
+    display: none;
+}
+
+
+/* on page load (not yet touched or clicked) */
+
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style="color: rgb(155, 155, 155);"] {
+    display: none;
+}
+
+
+/* Remove span with left border line | (next to the arrow) in Chrome & Firefox */
+
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style="border-left: 1px solid rgb(187, 187, 187);"] {
+    display: none;
+}
+
+
+/* Remove span with left border line | (next to the arrow) in Edge & IE11 */
+
+div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span[style="border-left-color: rgb(187, 187, 187); border-left-width: 1px; border-left-style: solid;"] {
+    display: none;
+}
+
+
+/* HIDE the google translate toolbar */
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+
+/* OVERRIDE GOOGLE TRANSLATE WIDGET CSS END */
+
+#counter li {
+    float: left;
+    list-style: none;
+    color: #fff;
+    font-size: 40px;
+    padding: 0px 5%;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    width: initial;
+    font-weight: bold;
+}
+
+#counter li:first-child {
+    padding-left: 0;
+}
+
+#counter li span {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.blue-halef {
+    background-image: url(../img/Main/mbg5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-light-jobcont {
+    background-color: #999da04d!important;
+}
+
+.text-custom {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff8e3e;
+    padding-right: 5px;
+}
+
+.text-custom:hover {
+    color: #f76f0e!important;
+}
+
+.text-dark {
+    text-decoration: none;
+}
+
+.step-by-inner-img {
+    max-width: 127px;
+    padding: 18px 25px;
+    border: 1px solid #c0d0cd;
+    border-radius: 5px;
+}
+
+.step-by {
+    width: 215px;
+    font-size: 20px;
+    color: #565656;
+    text-align: center;
+    float: left;
+    margin-right: 2%;
+    padding: 5px;
+}
+
+
+.form-card {
+    max-width: 830px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 2px 5px rgb(0 0 0 / 15%);
+    box-shadow: 0px 2px 5px rgb(0 0 0 / 15%);
+}
+
+.form-card-inner {
+    border: 2px solid #e7e6e6;
+    border-radius: 5px;
+    position: relative;
+    padding: 25px 20px;
+    font-size: 0;
+}
+
+span.form-card-title {
+    position: absolute;
+    top: -25px;
+    background: #fff;
+    padding: 10px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    left: 10px;
+    color: rgba(0, 0, 0, .87) !important;
+}
+
+.tablinks{
+    border-bottom: 1px solid #918d8d;
+}
+
+.tablinks.active{
+    border-bottom: 3px solid #f76f0e;
+    color: #f76f0e;
+}
+
+.tablinks:hover:not(.active){
+    border-bottom: 3px solid #fcb98a;
+}
+
+.tablinks:hover:not(.active) span{
+    color: #ff8024;
+}
