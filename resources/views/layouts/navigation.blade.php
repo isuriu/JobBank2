@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                        <img src="img/logo3.png" style="height:50px;">
                     </a>
                 </div>
 
@@ -90,3 +90,5 @@
         </div>
     </div>
 </nav>
+
+
