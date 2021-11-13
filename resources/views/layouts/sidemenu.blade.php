@@ -1,4 +1,5 @@
 @include('layouts/links')
+
 <div class="wrapper">
     <!--Top menu -->
     <div class="sidebar">
@@ -16,69 +17,58 @@
         <!--menu item-->
         <ul>
             <li>
-                <a href="#" class="active">
+                <a href="{{ url('../dashboard') }}" class="{{ (request()->is('dashboard')) ? 'active' : '' }}">
                     <span class="icon"><i class="fas fa-home"></i></span>
-                    <span class="item">Home</span>
+                    <span class="item">Dashboard</span>
                     <span class="mini-icon"><i class="fas fa-home"></i></span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('../myjobs') }}" class="{{ (request()->is('myjobs')) ? 'active' : '' }}">
                     <span class="icon"><i class="fas fa-desktop"></i></span>
-                    <span class="item">My Dashboard</span>
+                    <span class="item">Applied Jobs</span>
                     <span class="mini-icon"><i class="fas fa-desktop"></i></span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('../find') }}" class="{{ (request()->is('find')) ? 'active' : '' }}">
                     <span class="icon"><i class="fas fa-user-friends"></i></span>
-                    <span class="item">People</span>
+                    <span class="item">Find Jobs</span>
                     <span class="mini-icon"><i class="fas fa-user-friends"></i></span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('../profile') }}" class="{{ (request()->is('profile')) ? 'active' : '' }}">
                     <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                    <span class="item">Perfomance</span>
+                    <span class="item">Profile</span>
                     <span class="mini-icon"><i class="fas fa-tachometer-alt"></i></span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-database"></i></span>
-                    <span class="item">Development</span>
-                    <span class="mini-icon"><i class="fas fa-database"></i></span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <span class="item">Reports</span>
-                    <span class="mini-icon"><i class="fas fa-chart-line"></i></span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-user-shield"></i></span>
-                    <span class="item">Admin</span>
-                    <span class="mini-icon"><i class="fas fa-user-shield"></i></span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-cog"></i></span>
-                    <span class="item">Settings</span>
-                    <span class="mini-icon"><i class="fas fa-cog"></i></span>
-                </a>
-            </li>
+            
         </ul>
         
     </div>
 
 </div>
+@include('layouts/scripts')
 <script>
     var hamburger = document.querySelector(".hamburger");
         hamburger.addEventListener("click", function(){
-        document.querySelector("body").classList.toggle("active");
+        document.getElementsByClassName("sidebar")[0].classList.toggle("active");
+        document.getElementById("page_content").classList.toggle("page-resize");
+    });
+
+    $(document).ready(function(){
+        var wid = $(window).width();
+        $("#page_content").css("width",(wid-50));
+
+        $(".hamburger").click(function(){
+            if($("#page_content").hasClass("page-resize")){
+                var wid2 = $(window).width();
+                $("#page_content").css("width",(wid2-225));
+            }else{
+                $("#page_content").css("width",(wid-50));
+            }
+        });
     });
 </script>

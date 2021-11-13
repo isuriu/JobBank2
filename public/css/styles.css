@@ -464,11 +464,12 @@ span.form-card-title {
     background: rgb(5, 68, 104);
     position: fixed;
     top: 0;
-    left: 0;
+    left: -175px;
     width: 225px;
     height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
+    z-index: 1;
 }
 
 .wrapper .sidebar .profile{
@@ -510,14 +511,18 @@ span.form-card-title {
     display: inline-block;
 }
 .wrapper .sidebar ul li a .mini-icon{
-    color: #dee4ec;
     width: 30px;
-    display: none;
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    color: #dee4ec;
 }
 .wrapper .sidebar ul li a.active .mini-icon{
     color: #10558d;
     width: 30px;
-    display: none;
+    display: inline-block;
+    position: absolute;
+    right: 5px;
 }
 
 .wrapper .sidebar ul li a:hover,
@@ -549,14 +554,35 @@ span.form-card-title {
     color: #a2ecff;
 }
 
-body.active .wrapper .sidebar{
+.sidebar.active{
     /*left: -225px;*/
-    left: -175px;
+    left: 0px;
 }
 
-body.active .wrapper .sidebar ul li a .mini-icon{
+.sidebar.active ul li a .mini-icon,.sidebar.active ul li a.active .mini-icon{
     width: 30px;
     display: inline-block;
     position: absolute;
     right: 10px;
+    display: none;
+}
+
+#page_content{
+    transition: all 0.5s ease;
+    margin-left: 50px;
+}
+
+#page_content.page-resize{
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.dash-card{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.dash-card .card{
+    border-radius: 8px;
+    box-shadow: 0 4px 20px 1px rgb(0 0 0 / 6%), 0 1px 4px rgb(0 0 0 / 8%);
 }

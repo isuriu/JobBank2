@@ -33,6 +33,18 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/myjobs', function () {
+    return view('applied_jobs');
+});
+
+Route::get('/find', function () {
+    return view('find_jobs');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['verified'])->name('dashboard');
