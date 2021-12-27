@@ -6,6 +6,11 @@
         </h2>
     </x-slot>
     <br>
+    <nav aria-label="breadcrumb" style="padding-left: 15px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+    </nav>
     <div class="container-fluid">
 
         <div class="row">
@@ -91,7 +96,7 @@
                 <div class="col-lg-4" style="padding-right: 25px;">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-text">Top categories</p>
+                            <p class="card-text">Top Recommended Jobs(from user main category)</p>
                         </div>
                     </div>
                 </div>

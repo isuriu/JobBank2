@@ -21,25 +21,34 @@ Route::get('/post-resume', function () {
     return view('post_resume');
 });
 
-Route::get('/find-job', function () {
+/*Route::get('/find_job', function () {
     return view('find_job');
+});*/
+Route::get('/find_job','App\Http\Controllers\JobsController@getData2');
+
+Route::get('/post_jobs', function () {
+    $data=App\Models\job_categories::all();
+    return view('post_jobs')->with('categories',$data)->with('message','');
 });
 
-Route::get('/post-job', function () {
-    return view('post_job');
+Route::get('/posted-jobs', function () {
+    $data1=App\Models\Job::all();
+    return view('posted_jobs')->with('job_data',$data1);
 });
 
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/myjobs', function () {
+/*Route::get('/applied_jobs', function () {
     return view('applied_jobs');
-});
+});*/
+Route::get('/applied_jobs', 'App\Http\Controllers\JobsController@getUserAppliedJobs');
 
-Route::get('/find', function () {
-    return view('find_jobs');
-});
+Route::get('/find_jobs','App\Http\Controllers\JobsController@getData');
+
+//Route::get('/ajax_get_jobs','App\Http\Controllers\JobsController@getAjaxData');
+Route::get('/ajax_get_jobs','App\Http\Controllers\JobsController@getAjaxData')->name('ajax_get_jobs');
 
 Route::get('/profile', function () {
     return view('profile');
@@ -48,5 +57,20 @@ Route::get('/profile', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['verified'])->name('dashboard');
+
+
+Route::post('/saveJob', 'App\Http\Controllers\JobsController@store');
+
+//Route::get('/job_details/{id}/{page}', 'App\Http\Controllers\JobsController@getJobData');
+//Route::get('/job_details/{id}/{page}', array('before' => 'auth', 'uses' => 'App\Http\Controllers\JobsController@getJobData'));
+Route::get('/job_details/{id}/{page}', [App\Http\Controllers\JobsController::class, 'getJobData'])
+                ->middleware('auth');
+/*Route::get('/job_details/{id}/{page}', function () {
+    // Only authenticated users may enter...
+})->middleware('auth');*/
+
+Route::get('/uploadfile','App\Http\Controllers\UploadFileController@index');
+Route::post('/uploadfile','App\Http\Controllers\UploadFileController@showUploadFile');
+
 
 require __DIR__.'/auth.php';

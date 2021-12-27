@@ -8,7 +8,7 @@
     <br>
     <nav aria-label="breadcrumb" style="padding-left: 15px;">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Applied Jobs</li>
+            <li class="breadcrumb-item active" aria-current="page">Created Jobs</li>
         </ol>
     </nav>
     <div class="container-fluid">
@@ -18,20 +18,22 @@
                     <thead>
                         <tr>
                             <th>Job Title</th>
-                            <th>Company Name</th>
-                            <th>Closing Date</th>
                             <th>Salary</th>
-                            <th></th>
+                            <th>Type</th>
+                            <th>Closing Date</th>
+                            <th>Requirements</th>
+                            <th>Key Words</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($applied_jobs as $job)
+                        @foreach($job_data as $job)
                         <tr>
                             <td>{{$job->job_title}}</td>
-                            <td>{{$job->company_name}}</td>
+                            <td>{{$job->expected_salary}}</td>
+                            <td>{{$job->job_type}}</td>
                             <td>{{$job->closing_date}}</td>
-                            <td>&#165;{{number_format($job->expected_salary, '0', '.', ',')}}</td>
-                            <td><a href="/job_details/{{$job->job_id}}/applied">See More >></a></td>
+                            <td>{{$job->requirements}}</td>
+                            <td>{{$job->key_words}}</td>
                         </tr>
                         @endforeach
                     </tbody>

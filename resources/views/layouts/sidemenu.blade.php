@@ -10,9 +10,8 @@
         </div>
         <!--profile image & text-->
         <div class="profile">
-            <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg" alt="profile_picture">
-            <h3>Anamika Roy</h3>
-            <p>Designer</p>
+            <img src="{{asset('/img/icons/profile.png')}}" alt="profile_picture">
+            <h3>{{ Auth::user()->name }}</h3>
         </div>
         <!--menu item-->
         <ul>
@@ -23,20 +22,38 @@
                     <span class="mini-icon"><i class="fas fa-home"></i></span>
                 </a>
             </li>
-            <li>
-                <a href="{{ url('../myjobs') }}" class="{{ (request()->is('myjobs')) ? 'active' : '' }}">
-                    <span class="icon"><i class="fas fa-desktop"></i></span>
-                    <span class="item">Applied Jobs</span>
-                    <span class="mini-icon"><i class="fas fa-desktop"></i></span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('../find') }}" class="{{ (request()->is('find')) ? 'active' : '' }}">
-                    <span class="icon"><i class="fas fa-user-friends"></i></span>
-                    <span class="item">Find Jobs</span>
-                    <span class="mini-icon"><i class="fas fa-user-friends"></i></span>
-                </a>
-            </li>
+            @if(Auth::user()->role =='USER')
+                <li>
+                    <a href="{{ url('../applied_jobs') }}" class="{{ (request()->is('applied_jobs')) ? 'active' : '' }}">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Applied Jobs</span>
+                        <span class="mini-icon"><i class="fas fa-desktop"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('../find_jobs') }}" class="{{ (request()->is('find_jobs')) ? 'active' : '' }}">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Find Jobs</span>
+                        <span class="mini-icon"><i class="fas fa-user-friends"></i></span>
+                    </a>
+                </li>
+            @else
+                <li>
+                    <a href="{{ url('../posted-jobs') }}" class="{{ (request()->is('posted-jobs')) ? 'active' : '' }}">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Posted Jobs</span>
+                        <span class="mini-icon"><i class="fas fa-desktop"></i></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('../post_jobs') }}" class="{{ (request()->is('post_jobs')) ? 'active' : '' }}">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Create new Job</span>
+                        <span class="mini-icon"><i class="fas fa-user-friends"></i></span>
+                    </a>
+                </li>
+            @endif
+            
             <li>
                 <a href="{{ url('../profile') }}" class="{{ (request()->is('profile')) ? 'active' : '' }}">
                     <span class="icon"><i class="fas fa-tachometer-alt"></i></span>

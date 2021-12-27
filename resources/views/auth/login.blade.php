@@ -40,7 +40,13 @@
                 </label>
             </div>
 
+                <button class="btn" style="background-color: #f76f0e;border: none;position: absolute;margin-top: 15px;">
+                    {{ __('Sign Up') }}
+                </button>
+
             <div class="flex items-center justify-end mt-4">
+                
+
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
@@ -54,3 +60,26 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+
+<style>
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #fff;
+}
+</style>

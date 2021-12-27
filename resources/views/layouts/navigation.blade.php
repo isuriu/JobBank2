@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="img/logo3.png" style="height:50px;">
+                        <img src="{{asset('/img/logo3.png')}}" style="height:50px;">
                     </a>
                 </div>
 
@@ -18,8 +18,12 @@
                 </div>-->
             </div>
 
+            
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div style="position: relative;top: 3px;margin-right: 30px;">
+                <i class="fa fa-globe-asia" style="color: #6b6b6b;display: inline-block;vertical-align: middle;"></i><div id="google_translate_element" style="display: inline-block;"></div>
+            </div>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">

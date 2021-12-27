@@ -10,16 +10,13 @@
                     <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" aria-current="page" href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('find-job')) ? 'active' : '' }}" href="{{ url('/find-job') }}">Find a Job</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('post-resume')) ? 'active' : '' }}" href="{{ url('/post-resume') }}">Post a Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('post-job')) ? 'active' : '' }}" href="{{ url('/post-job') }}">Post a Job</a>
+                    <a class="nav-link {{ (request()->is('find_job')) ? 'active' : '' }}" href="{{ url('/find_job') }}">Find a Job</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">About</a>
+                </li>
+                <li class="nav-item" style="margin-right: 5px;">
+                    <a class="btn btn-secondary" href="{{ url('/register') }}">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-primary" href="{{ url('/login') }}">Login</a>
