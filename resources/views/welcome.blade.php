@@ -27,7 +27,7 @@
 
 
             <section class="header">
-            <span class="parallax-h1">Looking For a <span class="theme-color">Job?</span></span>
+            <span class="parallax-h1">Looking For a <span class="theme-color">Job??</span></span>
             <span class="parallax-h2"><span class="theme-color">Join us</span> & Build Your Career Path Today</span>
 
                 @include('layouts/navigation_home')
