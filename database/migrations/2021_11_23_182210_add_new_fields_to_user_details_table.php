@@ -15,8 +15,8 @@ class AddNewFieldsToUserDetailsTable extends Migration
     {
         Schema::table('user_details', function (Blueprint $table) {
             $table->integer('status')->default(1);
-            $table->text('cv_file');
-            $table->text('profile_picture');
+            $table->text('cv_file')->nullable();
+            $table->text('profile_picture')->nullable();
         });
     }
 

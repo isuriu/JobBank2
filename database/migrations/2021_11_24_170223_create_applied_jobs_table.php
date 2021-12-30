@@ -14,7 +14,7 @@ class CreateAppliedJobsTable extends Migration
     public function up()
     {
         Schema::create('applied_jobs', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer('job_id');
             $table->string('email');
             $table->string('name');
