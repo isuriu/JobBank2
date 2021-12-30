@@ -121,8 +121,8 @@
 
 <script>  
     var year = ['2013','2014','2015', '2016'];  
-    var data_click = <?php echo $click; ?>;  
-    var data_viewer = <?php echo $viewer; ?>;  
+    var data_click = '';  
+    var data_viewer = '';  
   
     var barChartData = {  
         labels: year,  
