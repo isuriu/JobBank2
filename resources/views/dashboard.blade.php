@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-4">
-                                <img src="img/icons/dash-ic1.png" style="width: 75px;margin: auto;"> 
+                                <img src="img/icons/dash-ic1.png" style="width: 75px;margin: auto;">  
                             </div>
                             <div class="col-lg-6" style="text-align: center;">
                                 <h5 class="card-title">Applied Jobs</h5>
