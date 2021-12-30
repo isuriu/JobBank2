@@ -26,6 +26,7 @@ class CreateJobsTable extends Migration
             $table->date('closing_date');
             $table->text('requirements')->nullable();
             $table->text('key_words')->nullable();
+            $table->text('images')->nullable();
             $table->string('create_user');
             $table->timestamps();
         });
