@@ -94,7 +94,7 @@
                                 <div class="row">  
                                     <div class="col-md-12">  
                                         <div class="panel panel-default">  
-                                            <div class="panel-heading">Dashboard</div>  
+                                            <div class="panel-heading"></div>  
                                             <div class="panel-body">  
                                                 <ul class="timeline" id="timeline">
                                                     <li class="li complete">
@@ -184,6 +184,7 @@
     border-top: 2px solid #D6DCE0;
     position: relative;
     transition: all 200ms ease-in;
+    padding-top: 20px;
 }
 .status h4 {
     font-weight: 600;
