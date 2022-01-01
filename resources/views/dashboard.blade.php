@@ -162,6 +162,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 350px;
 }
 
 .li {
