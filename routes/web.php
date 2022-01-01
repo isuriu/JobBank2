@@ -54,9 +54,7 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['verified'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\JobsController::class, 'getDashboardData'])->middleware(['verified'])->name('dashboard');
 
 
 Route::post('/saveJob', 'App\Http\Controllers\JobsController@store');

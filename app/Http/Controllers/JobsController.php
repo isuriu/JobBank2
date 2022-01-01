@@ -344,4 +344,20 @@ class JobsController extends Controller
         return view('applied_jobs', compact('applied_jobs'));
     }
 
+    public function getDashboardData()
+    {
+        $jobdata=Job::find($id);
+
+        $logged_user = Auth::user()->email;
+
+        $condition_arr = ['email' => $logged_user];
+        $applied_count = applied_jobs::where($condition_arr)->count();
+
+        $applied_data = applied_jobs::where($condition_arr)->orderBy('created_at', 'DESC')->skip(0)->take(5)->get();
+  
+        return view('dashboard', compact('applied_count','applied_data'));
+    }
+
+
+
 }
