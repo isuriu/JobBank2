@@ -238,7 +238,7 @@
     }
 }
 
-.timeline li{
-    transform: scale(2);
+.timeline li:hover{
+    transform: scale(1.5);
 }
 </style>
