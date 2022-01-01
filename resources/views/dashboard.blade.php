@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-lg-6" style="text-align: center;">
                                 <h5 class="card-title">Applied Jobs</h5>
-                                <p class="card-text" style="font-size: 30px;">10</p>
+                                <p class="card-text" style="font-size: 30px;">{{applied_count}}</p>
                             </div>
                             <div class="col-lg-2">
                             </div>
