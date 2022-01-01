@@ -237,4 +237,8 @@
         transition: all 200ms ease-in;
     }
 }
+
+.timeline li{
+    transform: scale(2);
+}
 </style>
