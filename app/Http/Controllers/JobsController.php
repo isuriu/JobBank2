@@ -346,7 +346,7 @@ class JobsController extends Controller
 
     public function getDashboardData()
     {
-        $jobdata=Job::find($id);
+
 
         $logged_user = Auth::user()->email;
 
