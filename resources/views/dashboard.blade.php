@@ -96,46 +96,44 @@
                                         <div class="panel panel-default">  
                                             <div class="panel-heading">Dashboard</div>  
                                             <div class="panel-body">  
-                                                <canvas id="canvas" height="280" width="600">
-                                                    <ul class="timeline" id="timeline">
-                                                        <li class="li complete">
-                                                            <div class="timestamp">
-                                                            <span class="author">Abhi Sharma</span>
-                                                            <span class="date">11/15/2014<span>
-                                                            </div>
-                                                            <div class="status">
-                                                            <h4> Shift Created </h4>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li complete">
-                                                            <div class="timestamp">
-                                                            <span class="author">PAM Admin</span>
-                                                            <span class="date">11/15/2014<span>
-                                                            </div>
-                                                            <div class="status">
-                                                            <h4> Email Sent </h4>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li complete">
-                                                            <div class="timestamp">
-                                                            <span class="author">Aaron Rodgers</span>
-                                                            <span class="date">11/15/2014<span>
-                                                            </div>
-                                                            <div class="status">
-                                                            <h4> SIC Approval </h4>
-                                                            </div>
-                                                        </li>
-                                                        <li class="li">
-                                                            <div class="timestamp">
-                                                            <span class="author">PAM Admin</span>
-                                                            <span class="date">TBD<span>
-                                                            </div>
-                                                            <div class="status">
-                                                            <h4> Shift Completed </h4>
-                                                            </div>
-                                                        </li>
-                                                    </ul>  
-                                                </canvas>  
+                                                <ul class="timeline" id="timeline">
+                                                    <li class="li complete">
+                                                        <div class="timestamp">
+                                                        <span class="author">Abhi Sharma</span>
+                                                        <span class="date">11/15/2014<span>
+                                                        </div>
+                                                        <div class="status">
+                                                        <h4> Shift Created </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li class="li complete">
+                                                        <div class="timestamp">
+                                                        <span class="author">PAM Admin</span>
+                                                        <span class="date">11/15/2014<span>
+                                                        </div>
+                                                        <div class="status">
+                                                        <h4> Email Sent </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li class="li complete">
+                                                        <div class="timestamp">
+                                                        <span class="author">Aaron Rodgers</span>
+                                                        <span class="date">11/15/2014<span>
+                                                        </div>
+                                                        <div class="status">
+                                                        <h4> SIC Approval </h4>
+                                                        </div>
+                                                    </li>
+                                                    <li class="li">
+                                                        <div class="timestamp">
+                                                        <span class="author">PAM Admin</span>
+                                                        <span class="date">TBD<span>
+                                                        </div>
+                                                        <div class="status">
+                                                        <h4> Shift Completed </h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>  
                                             </div>  
                                         </div>  
                                     </div>  
@@ -157,48 +155,6 @@
     </div>
     
 </x-app-layout>
-
-<script>  
-    var year = ['2013','2014','2015', '2016'];  
-    var data_click = '';  
-    var data_viewer = '';  
-  
-    var barChartData = {  
-        labels: year,  
-        datasets: [{  
-            label: 'Click',  
-            backgroundColor: "rgba(220,220,220,0.5)",  
-            data: data_click  
-        }, {  
-            label: 'View',  
-            backgroundColor: "rgba(151,187,205,0.5)",  
-            data: data_viewer  
-        }]  
-    };  
-  
-    window.onload = function() {  
-        var ctx = document.getElementById("canvas").getContext("2d");  
-        window.myBar = new Chart(ctx, {  
-            type: 'bar',  
-            data: barChartData,  
-            options: {  
-                elements: {  
-                    rectangle: {  
-                        borderWidth: 2,  
-                        borderColor: 'rgb(0, 255, 0)',  
-                        borderSkipped: 'bottom'  
-                    }  
-                },  
-                responsive: true,  
-                title: {  
-                    display: true,  
-                    text: 'Yearly Website Visitor'  
-                }  
-            }  
-        });  
-  
-    };  
-</script>  
 
 <style>
 .timeline {
