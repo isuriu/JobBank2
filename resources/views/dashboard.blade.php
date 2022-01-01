@@ -240,5 +240,7 @@
 
 .timeline li:hover{
     transform: scale(1.5);
+    position: relative;
+    top: -7.5px;
 }
 </style>
