@@ -1,3 +1,4 @@
+back
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -40,9 +41,9 @@
                 </label>
             </div>
 
-                <button class="btn" style="background-color: #f76f0e;border: none;position: absolute;margin-top: 15px;">
+                <a class="btn" href="{{ url('/register') }}" style="background-color: #f76f0e;border: none;position: absolute;margin-top: 15px;">
                     {{ __('Sign Up') }}
-                </button>
+                </a>
 
             <div class="flex items-center justify-end mt-4">
                 
