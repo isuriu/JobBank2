@@ -1022,7 +1022,7 @@ $('.yearselect').yearselect({
 <style>
 .items-center a img{
     visibility: hidden;
-    height: 20px;
+    height: 20px !important;
 }
 </style>
 
