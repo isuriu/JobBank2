@@ -363,7 +363,7 @@
 	
 				<div class="step-spacer"></div>
 				<div id="step-image">
-					<div class="step-by-container">
+					<div class="row">
 						<div class="step-by col-md-4">
 							First Step
 							<div class="step-by-inner">
