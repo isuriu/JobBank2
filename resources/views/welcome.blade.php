@@ -354,9 +354,10 @@
             </div>
         </div>
         <br>
+        <br>
         <div class="step-to">
 			<div class="container">
-				<h1 style="text-align: center;">How It Works</h1>
+				<h1 style="text-align: center;">How It Works</h1><br>
 	
 				<div class="step-spacer"></div>
 				<div id="step-image">
