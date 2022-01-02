@@ -356,10 +356,7 @@
         <br>
         <div class="step-to">
 			<div class="container">
-				<h1>Easiest Way To Use</h1>
-				<p>
-					At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas mo
-				</p>
+				<h1>How It Works</h1>
 	
 				<div class="step-spacer"></div>
 				<div id="step-image">
