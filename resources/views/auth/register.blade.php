@@ -60,12 +60,7 @@
         <!-- Tab content step 02 foriegn or local if job seeker-->
         <div id="reg_jap" class="tabcontent animate__animated animate__slideInLeft" style="display:block;">
             <x-guest-layout>
-                <x-auth-card>
-                    <x-slot name="logo">
-                        <a href="/">
-                            <x-application-logo class="w-20 h-20 fill-current text-gray-500" style="display: none;"/>
-                        </a>
-                    </x-slot>           
+                <x-auth-card>         
 
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -435,12 +430,7 @@
 
         <div id="reg_foreign" class="tabcontent animate__animated animate__slideInRight">
             <x-guest-layout>
-                <x-auth-card>
-                    <x-slot name="logo">
-                        <a href="/">
-                            <x-application-logo class="w-20 h-20 fill-current text-gray-500" style="display: none;"/>
-                        </a>
-                    </x-slot>           
+                <x-auth-card>       
 
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -882,12 +872,7 @@
 
     <div id="jobposter" style="display:none;">
         <x-guest-layout>
-            <x-auth-card>
-                <x-slot name="logo">
-                    <a href="/">
-                        <x-application-logo class="w-20 h-20 fill-current text-gray-500" style="display: none;"/>
-                    </a>
-                </x-slot>           
+            <x-auth-card>        
 
                 <!-- Validation Errors -->
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />

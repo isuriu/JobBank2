@@ -1,5 +1,5 @@
-back
 <x-guest-layout>
+    <a>Back to Home</a>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
