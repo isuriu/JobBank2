@@ -1019,4 +1019,10 @@ $('.yearselect').yearselect({
     });
 </script>
 
+<style>
+.items-center a img{
+    visibility: hidden;
+}
+</style>
+
 </html>
