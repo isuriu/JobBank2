@@ -435,3 +435,13 @@
 
     </body>
 </html>
+
+<style>
+.footer-wrap1{
+    background: #383838;
+}
+
+.footer-wrap2{
+    background: #303030;
+}
+</style>
