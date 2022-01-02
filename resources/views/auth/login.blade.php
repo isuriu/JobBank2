@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"/>
 <x-guest-layout>
-    <a style="position: absolute;top: 20px;left: 50px;font-weight: bold;"><i class="fas fa-angle-double-left"></i>&nbsp;Back to Home</a>
+    <a style="position: absolute;top: 20px;left: 50px;font-weight: bold;" href="/"><i class="fas fa-angle-double-left"></i>&nbsp;Back to Home</a>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
