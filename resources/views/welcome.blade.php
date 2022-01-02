@@ -364,7 +364,7 @@
 				<div class="step-spacer"></div>
 				<div id="step-image">
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-md-4" style="text-align: center;">
 							First Step
 							<div class="step-by-inner">
 								<div class="step-by-inner-img">
@@ -403,7 +403,7 @@
 							<h5>Register with us</h5>
 						</div>
 								
-						<div class="col-md-4">
+						<div class="col-md-4" style="text-align: center;">
 							Second Step
 							<div class="step-by-inner">
 								<div class="step-by-inner-img">
@@ -413,7 +413,7 @@
 							<h5>Search your job</h5>
 						</div>
 								
-						<div class="col-md-4">
+						<div class="col-md-4" style="text-align: center;">
 							Third Step
 							<div class="step-by-inner">
 								<div class="step-by-inner-img">

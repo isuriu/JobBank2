@@ -443,10 +443,11 @@ body {
 }
 
 .step-by-inner-img {
-    max-width: 127px;
+    max-width: 160px;
     padding: 18px 25px;
     border: 1px solid #c0d0cd;
     border-radius: 5px;
+    margin: auto;
 }
 
 .step-by {
