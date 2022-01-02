@@ -12,7 +12,7 @@
                 <tr>
                     <td width="52">&nbsp;</td>
                     <td width="856" valign="top" align="center">
-                    <p><span style="font-size:120%; font-weight:bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">East Consultant Co., Ltd.</font></font></span><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 
+                    <p><span style="font-size:120%; font-weight:bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;color: #777777;">East Consultant Co., Ltd.</font></font></span><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;color: #777777;"> 
                     TEL: 0550-88-1447 FAX: 0550-88-1450 890-10 Hagiwara, Gotemba City, Shizuoka Prefecture</font></font></p>
                     </td>
                     <td width="52" valign="bottom">
@@ -70,9 +70,14 @@ ul#footer-menu li {
 
 #footer-menu A:link, #footer-menu A:active, #footer-menu A:visited {
     text-decoration: none;
-    color: #000000;
+    color: #777777;
     display: inline;
     margin-right: 10px;
+    font-size: 14px;
+}
+
+#footer-menu A:hover{
+    color: #c0c0c0;
 }
 
 #footer-contents {
@@ -97,5 +102,6 @@ ul#footer-menu li {
     color: #FFF;
     padding-top: 12px;
     padding-bottom: 10px;
+    font-size: 13px;
 }
 </style>
