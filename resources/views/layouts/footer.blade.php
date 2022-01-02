@@ -60,6 +60,7 @@ ul#footer-menu {
     margin-left: auto;
     text-align: center;
     padding: 0px;
+    font-weight: bold;
 }
 
 ul#footer-menu li {
