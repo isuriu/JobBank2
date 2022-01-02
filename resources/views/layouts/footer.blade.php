@@ -12,7 +12,7 @@
                 <tr>
                     <td width="52">&nbsp;</td>
                     <td width="856" valign="top" align="center">
-                    <p><span style="font-size:120%; font-weight:bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;color: #777777;">East Consultant Co., Ltd.</font></font></span><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;color: #777777;"> 
+                    <p style="font-size: 14px;"><span style="font-size:120%; font-weight:bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;color: #777777;">East Consultant Co., Ltd.</font></font></span><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;color: #777777;"> 
                     TEL: 0550-88-1447 FAX: 0550-88-1450 890-10 Hagiwara, Gotemba City, Shizuoka Prefecture</font></font></p>
                     </td>
                     <td width="52" valign="bottom">
