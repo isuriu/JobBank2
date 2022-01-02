@@ -364,7 +364,7 @@
 				<div class="step-spacer"></div>
 				<div id="step-image">
 					<div class="row">
-						<div class="step-by col-md-4">
+						<div class="col-md-4">
 							First Step
 							<div class="step-by-inner">
 								<div class="step-by-inner-img">
@@ -374,7 +374,7 @@
 							<h5>Register with us</h5>
 						</div>
 								
-						<div class="step-by col-md-4">
+						<div class="col-md-4">
 							Second Step
 							<div class="step-by-inner">
 								<div class="step-by-inner-img">
@@ -384,7 +384,7 @@
 							<h5>Create your profile</h5>
 						</div>
 								
-						<div class="step-by col-md-4">
+						<div class="col-md-4">
 							Third Step
 							<div class="step-by-inner">
 								<div class="step-by-inner-img">
