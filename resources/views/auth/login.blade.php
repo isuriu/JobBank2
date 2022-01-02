@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <a>Back to Home</a>
+    <a style="position: absolute;top: 20px;left: 50px;font-weight: bold;"><i class="fas fa-angle-double-left"></i>&nbsp;Back to Home</a>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
