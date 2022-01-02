@@ -40,11 +40,11 @@
 </footer>
 
 <style>
-.footer-wrap1{
+#footer-wrap1{
     background: #383838;
 }
 
-.footer-wrap2{
+#footer-wrap2{
     background: #303030;
 }
 </style>
