@@ -276,7 +276,7 @@ class JobsController extends Controller
                         <span>
                             '.$job_type.'
                         </span>
-                        <span>'.date('Y-m-d', strtotime($record->created_at)).'</span>
+                        <span>'.date('Y-m-d', strtotime($record->closing_date)).'</span>
                         <br>
                         <a href="/job_details/'.$record->job_id.'/find">See More >></a>
                     </div>';
