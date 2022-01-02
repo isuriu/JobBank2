@@ -42,9 +42,60 @@
 <style>
 #footer-wrap1{
     background: #383838;
+    padding-top: 25px;
 }
 
 #footer-wrap2{
     background: #303030;
+}
+
+ul#footer-menu {
+    display: block;
+    width: 960px;
+    list-style-type: none;
+    clear: both;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    text-align: center;
+    padding: 0px;
+}
+
+ul#footer-menu li {
+    padding: 0px;
+    display: inline;
+    margin: 0px;
+}
+
+#footer-menu A:link, #footer-menu A:active, #footer-menu A:visited {
+    text-decoration: none;
+    color: #000000;
+    display: inline;
+    margin-right: 10px;
+}
+
+#footer-contents {
+    width: 960px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    clear: both;
+    padding-top: 25px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    line-height: 1.7;
+}
+
+#footer-copyright {
+    width: 930px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    color: #FFF;
+    padding-top: 12px;
+    padding-bottom: 10px;
 }
 </style>
