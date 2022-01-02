@@ -103,5 +103,6 @@ ul#footer-menu li {
     padding-top: 12px;
     padding-bottom: 10px;
     font-size: 13px;
+    color: #ffffffd9;
 }
 </style>
