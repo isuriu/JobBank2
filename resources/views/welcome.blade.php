@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="col-lg-4 col-md-4" style="padding: 5px;">
                                                 <div class="registration-form-box">
-                                                    <input type="submit" id="submit" name="send" class="btn btn-primary span1" value="Submit" style="width: 100%;">
+                                                    <input type="submit" id="submit" name="send" class="btn btn-primary span1" value="Search Job" style="width: 100%;">
                                                 </div>
                                             </div>
                                         </div>
