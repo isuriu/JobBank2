@@ -230,7 +230,7 @@
                     },  
                     success: function (data1) {
                         var data = data1;
-                        if(empty(data1)){
+                        if(data1 == ''){
                             data = "No data to display";
                         }
                         if(filtype==1){
