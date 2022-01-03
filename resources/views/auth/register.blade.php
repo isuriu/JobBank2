@@ -71,7 +71,7 @@
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
                             <div>
-                                <form method="POST" action="{{ route('register') }}">
+                                <form id="form_reg_jap" method="POST" action="{{ route('register') }}">
                                     @csrf
 
                                     <div class="form-card-inner">
@@ -986,6 +986,7 @@
 
 @include('layouts/scripts')
 <script src="../js/year-select.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
 <script>
 $('.yearselect').yearselect({
@@ -1018,6 +1019,36 @@ $('.yearselect').yearselect({
         });
     });
 </script>
+
+<script>
+    if ($("#form_reg_jap").length > 0) {
+        $("#form_reg_jap").validate({
+ 
+            rules: {
+                name: {
+                    required: true,
+                    maxlength: 50
+                },
+ 
+                full_name: {
+                    required: true,
+                    maxlength: 50,
+                    email: true,
+                }
+            },
+            messages: {
+ 
+                name: {
+                    required: "Please enter name",
+                },
+                full_name: {
+                    required: "Please enter message",
+                }
+ 
+            },
+        })
+    } 
+ </script>
 
 <style>
 .items-center a img{
