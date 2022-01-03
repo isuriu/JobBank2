@@ -221,14 +221,18 @@
 
             $(".tablinks").click(function() { 
                 var fil_id = $(this).attr('id');
-                var filtype = fil_id.split("-");
+                var filtype = fil_id.split("-")[1];
                 $.ajax({  //create an ajax request to display.php
                     type: "GET",
                     url: "get-job-list",
                     data: { 
                         type: filtype
                     },  
-                    success: function (data) {
+                    success: function (data1) {
+                        var data = data1;
+                        if(empty(data1)){
+                            data = "No data to display";
+                        }
                         if(filtype==1){
                             $("#recent_jobs").html(data);
                         }else if(filtype){
