@@ -299,6 +299,113 @@ class JobsController extends Controller
         exit;
     }
 
+
+    public function homeJobList(Request $request){
+
+        $type = $request->get('type');
+
+        switch ($type) {
+            case '1':
+                $records = DB::table('jobs')
+                ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                ->select('jobs.*', 'company_details.address')
+                ->orderBy('created_at', 'DESC')->skip(0)->take(3)->get();  
+                break;
+            case '2':
+                $records = DB::table('jobs')
+                ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                ->where('jobs.job_type', 'F')
+                ->select('jobs.*', 'company_details.address')
+                ->orderBy('created_at', 'DESC')->skip(0)->take(3)->get();  
+                break;
+            case '3':
+                $records = DB::table('jobs')
+                ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                ->where('jobs.job_type', 'P')
+                ->select('jobs.*', 'company_details.address')
+                ->orderBy('created_at', 'DESC')->skip(0)->take(3)->get();  
+                break;
+            default:
+                $records = DB::table('jobs')
+                ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                ->select('jobs.*', 'company_details.address')
+                ->orderBy('created_at', 'DESC')->skip(0)->take(3)->get();  
+        }
+
+ 
+        $data_arr = array();
+        
+        foreach($records as $record){
+           $html = '<div class="job-box bg-white mt-4">
+                <div class="p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-2">
+                            <div class="mo-mb-2">
+                                <img src="img/job-icon.png" alt="" class="img-fluid mx-auto d-block" style="width:70%">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                <h5 class="f-18"><a href="#" class="text-dark">Php Developer</a></h5>
+                                <p class="text-muted mb-0">Web Themes pvt.Ltd</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                <p class="text-muted mb-0"><i class="fas fa-map-marker-alt text-custom"></i>Berkshire Circle Knoxville</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>
+                                <p class="text-muted mb-0 mo-mb-2"><span class="text-custom">$</span>900-1100/m</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>
+                                <p class="text-muted mb-0">Full Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3 bg-light-jobcont">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div>
+                                <p class="text-muted mb-0 mo-mb-2"><span class="text-dark">Experience :</span> 2 - 3 years</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div>
+                                <a href="#" class="text-custom">Apply Now &nbsp;<i class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>';
+
+                if ($record->job_type == 'F')
+                    $job_type = "Full Time";
+                else
+                    $job_type = "Part Time";
+
+           /*$username = '<div class="items-link items-link2 f-right">
+                        <span>
+                            '.$job_type.'
+                        </span>
+                        <span>'.date('Y-m-d', strtotime($record->closing_date)).'</span>
+                        <br>
+                        <a href="/job_details/'.$record->job_id.'/find">See More >></a>
+                    </div>';*/
+
+        }
+
+   
+        echo $html;
+        exit;
+    }
+
+
+
     public function paginate($items, $perPage = 5, $page = null, $options = [])
     {
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);

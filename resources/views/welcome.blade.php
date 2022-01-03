@@ -81,106 +81,14 @@
             <!-- Tab links -->
             <div class="tab" style="text-align: center;">
                 <button class="tablinks active" onclick="openJobsTab(event, 'recent_jobs')">Recent Jobs</button>
-                <button class="tablinks" onclick="openJobsTab(event, 'featured_jobs')">Featured Jobs</button>
+                <!--<button class="tablinks" onclick="openJobsTab(event, 'featured_jobs')">Featured Jobs</button>-->
                 <button class="tablinks" onclick="openJobsTab(event, 'parttime_jobs')">Part Time</button>
                 <button class="tablinks" onclick="openJobsTab(event, 'fulltime_jobs')">Full TIme</button>
             </div>
 
             <!-- Tab content -->
             <div id="recent_jobs" class="tabcontent" style="display:block;">
-                <div class="job-box bg-white mt-4">
-                    <div class="p-4">
-                        <div class="row align-items-center">
-                            <div class="col-md-2">
-                                <div class="mo-mb-2">
-                                    <img src="img/job-icon.png" alt="" class="img-fluid mx-auto d-block" style="width:70%">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div>
-                                    <h5 class="f-18"><a href="#" class="text-dark">Php Developer</a></h5>
-                                    <p class="text-muted mb-0">Web Themes pvt.Ltd</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div>
-                                    <p class="text-muted mb-0"><i class="fas fa-map-marker-alt text-custom"></i>Berkshire Circle Knoxville</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div>
-                                    <p class="text-muted mb-0 mo-mb-2"><span class="text-custom">$</span>900-1100/m</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div>
-                                    <p class="text-muted mb-0">Full Time</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-light-jobcont">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <div>
-                                    <p class="text-muted mb-0 mo-mb-2"><span class="text-dark">Experience :</span> 2 - 3 years</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div>
-                                    <a href="#" class="text-custom">Apply Now &nbsp;<i class="fas fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="job-box bg-white mt-4">
-                    <div class="p-4">
-                        <div class="row align-items-center">
-                            <div class="col-md-2">
-                                <div class="mo-mb-2">
-                                    <img src="img/job-icon.png" alt="" class="img-fluid mx-auto d-block" style="width:70%">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div>
-                                    <h5 class="f-18"><a href="#" class="text-dark">Web Developer</a></h5>
-                                    <p class="text-muted mb-0">Web Themes pvt.Ltd</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div>
-                                    <p class="text-muted mb-0"><i class="fas fa-map-marker-alt text-custom"></i>Berkshire Circle Knoxville</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div>
-                                    <p class="text-muted mb-0 mo-mb-2"><span class="text-custom">$</span>900-1100/m</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div>
-                                    <p class="text-muted mb-0">Full Time</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-light-jobcont">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <div>
-                                    <p class="text-muted mb-0 mo-mb-2"><span class="text-dark">Experience :</span> 2 - 3 years</p>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div>
-                                    <a href="#" class="text-custom">Apply Now &nbsp;<i class="fas fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
             <div id="featured_jobs" class="tabcontent">
@@ -432,6 +340,24 @@
         </div>
 
         @include('layouts/footer')
+
+        <script type=text/javascript>
+        $(document).ready(function() {
+            //$(".tablinks").click(function() { 
+                $.ajax({  //create an ajax request to display.php
+                    type: "GET",
+                    url: "get-job-list",
+                    data: { 
+                        type: '1'
+                    },  
+                    success: function (data) {
+                        $("#recent_jobs").html(data);
+                    }
+                });
+            //});
+        });
+      
+      </script>
 
     </body>
 </html>

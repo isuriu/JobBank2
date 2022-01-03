@@ -70,5 +70,6 @@ Route::get('/job_details/{id}/{page}', [App\Http\Controllers\JobsController::cla
 Route::get('/uploadfile','App\Http\Controllers\UploadFileController@index');
 Route::post('/uploadfile','App\Http\Controllers\UploadFileController@showUploadFile');
 
+Route::get('get-job-list','App\Http\Controllers\JobsController@homeJobList');
 
 require __DIR__.'/auth.php';
