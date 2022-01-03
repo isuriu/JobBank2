@@ -235,7 +235,7 @@
                         }
                         if(filtype==1){
                             $("#recent_jobs").html(data);
-                        }else if(filtype){
+                        }else if(filtype==2){
                             $("#parttime_jobs").html(data);
                         }else{
                             $("#fulltime_jobs").html(data);
