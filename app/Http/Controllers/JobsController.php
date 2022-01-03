@@ -314,14 +314,14 @@ class JobsController extends Controller
             case '2':
                 $records = DB::table('jobs')
                 ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-                ->where('jobs.job_type', 'F')
+                ->where('jobs.job_type', 'P')
                 ->select('jobs.*', 'company_details.address')
                 ->orderBy('created_at', 'DESC')->skip(0)->take(3)->get();  
                 break;
             case '3':
                 $records = DB::table('jobs')
                 ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-                ->where('jobs.job_type', 'P')
+                ->where('jobs.job_type', 'F')
                 ->select('jobs.*', 'company_details.address')
                 ->orderBy('created_at', 'DESC')->skip(0)->take(3)->get();  
                 break;
