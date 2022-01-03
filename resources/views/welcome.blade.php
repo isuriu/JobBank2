@@ -231,7 +231,7 @@
                     success: function (data1) {
                         var data = data1;
                         if(data === ""){
-                            data = "No data to display";
+                            data = '<div style="height: 75px;text-align: center;margin-top: 50px;">No data to display</div>';
                         }
                         if(filtype==1){
                             $("#recent_jobs").html(data);
