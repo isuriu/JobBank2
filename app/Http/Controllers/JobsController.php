@@ -356,17 +356,17 @@ class JobsController extends Controller
                                 <p class="text-muted mb-0">'.$record->company_name.'</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <div>
                                 <p class="text-muted mb-0"><i class="fas fa-map-marker-alt text-custom"></i>'.$record->address.'</p>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <div>
                                 <p class="text-muted mb-0 mo-mb-2"><span class="text-custom">&#165;</span>'.number_format($record->expected_salary, '0', '.', ',').'</p>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <div>
                                 <p class="text-muted mb-0">'.$job_type.'</p>
                             </div>
@@ -377,11 +377,11 @@ class JobsController extends Controller
                     <div class="row">
                         <div class="col-md-10">
                             <div>
-                                <p class="text-muted mb-0 mo-mb-2"><span class="text-dark">Closing Date :</span> '.$record->closing_date.'</p>
+                                <p class="text-muted mb-0 mo-mb-2" style="padding-left: 25px;"><span class="text-dark">Closing Date :</span> '.$record->closing_date.'</p>
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <div>
+                            <div style="padding-left: 60px;">
                                 <a href="#" class="text-custom">Apply Now &nbsp;<i class="fas fa-angle-double-right"></i></a>
                             </div>
                         </div>
