@@ -335,8 +335,9 @@ class JobsController extends Controller
  
         $data_arr = array();
         
+        $html = "";
         foreach($records as $record){
-           $html = '<div class="job-box bg-white mt-4">
+           $html .= '<div class="job-box bg-white mt-4">
                 <div class="p-4">
                     <div class="row align-items-center">
                         <div class="col-md-2">
