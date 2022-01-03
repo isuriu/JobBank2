@@ -337,6 +337,11 @@ class JobsController extends Controller
         
         $html = "";
         foreach($records as $record){
+        
+            if ($record->job_type == 'F')
+                $job_type = "Full Time";
+            else
+                $job_type = "Part Time";
            $html .= '<div class="job-box bg-white mt-4">
                 <div class="p-4">
                     <div class="row align-items-center">
@@ -347,23 +352,23 @@ class JobsController extends Controller
                         </div>
                         <div class="col-md-3">
                             <div>
-                                <h5 class="f-18"><a href="#" class="text-dark">Php Developer</a></h5>
-                                <p class="text-muted mb-0">Web Themes pvt.Ltd</p>
+                                <h5 class="f-18"><a href="#" class="text-dark">'.$record->job_title.'</a></h5>
+                                <p class="text-muted mb-0">'.$record->company_name.'</p>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div>
-                                <p class="text-muted mb-0"><i class="fas fa-map-marker-alt text-custom"></i>Berkshire Circle Knoxville</p>
+                                <p class="text-muted mb-0"><i class="fas fa-map-marker-alt text-custom"></i>'.$record->address.'</p>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div>
-                                <p class="text-muted mb-0 mo-mb-2"><span class="text-custom">$</span>900-1100/m</p>
+                                <p class="text-muted mb-0 mo-mb-2"><span class="text-custom">&#165;</span>'.number_format($record->expected_salary, '0', '.', ',').'</p>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div>
-                                <p class="text-muted mb-0">Full Time</p>
+                                <p class="text-muted mb-0">'.$job_type.'</p>
                             </div>
                         </div>
                     </div>
@@ -372,7 +377,7 @@ class JobsController extends Controller
                     <div class="row">
                         <div class="col-md-10">
                             <div>
-                                <p class="text-muted mb-0 mo-mb-2"><span class="text-dark">Experience :</span> 2 - 3 years</p>
+                                <p class="text-muted mb-0 mo-mb-2"><span class="text-dark">Closing Date :</span> '.$record->closing_date.'</p>
                             </div>
                         </div>
                         <div class="col-md-2">
