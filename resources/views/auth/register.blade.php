@@ -1085,7 +1085,7 @@ label.error {
     left: 280px;
 }
 
-#job_categories[]-error{
+#job_categories\[\]-error{
     position: absolute;
     margin-top: -20px;
     left: 120px;
