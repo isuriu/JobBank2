@@ -136,7 +136,7 @@
                                         <div class="mt-3">
                                             <x-label class="form-label" for="telephone_number" :value="__('Telephone Number *  (Must Contain Only Digits)')" />
                                             
-                                            <x-input id="telephone_number" class="block mt-1 w-full" type="text" name="telephone_number" :value="old('telephone_number')" onkeypress="return magicvalidation(event)" required />
+                                            <x-input id="telephone_number" class="block mt-1 w-full" type="text" name="telephone_number" :value="old('telephone_number')" onkeypress="return magicvalidation(event)" />
                                         </div>
 
                                         <!-- Categories -->
@@ -183,7 +183,7 @@
                                         <div class="mt-3">
                                             <x-label for="school_name" :value="__('University / Collage / Institute Name *')" />
 
-                                            <x-input id="school_name" class="block mt-1 w-full" type="text" name="school_name" :value="old('school_name')" required/>
+                                            <x-input id="school_name" class="block mt-1 w-full" type="text" name="school_name" :value="old('school_name')"/>
                                         </div>
 
 
@@ -191,13 +191,13 @@
                                         <div class="mt-3">
                                             <x-label for="course_name" :value="__('Degree Name / Major Subject / Course Name *')" />
 
-                                            <x-input id="course_name" class="block mt-1 w-full" type="text" name="course_name" :value="old('course_name')" required/>
+                                            <x-input id="course_name" class="block mt-1 w-full" type="text" name="course_name" :value="old('course_name')"/>
                                         </div>
 
                                         <!-- Year of Graduation -->
                                         <div class="mt-3">
                                             <x-label class="form-label" for="yog" :value="__('Year of Graduation *')" style="display: inline-block;" />
-                                            <select class="yearselect form-select" id="yog" name="yog" required></select>
+                                            <select class="yearselect form-select" id="yog" name="yog"></select>
                                         </div>
 
                                         <!-- Graduation Month -->
@@ -387,7 +387,7 @@
                                         <div class="mt-2">
                                             <x-label for="email" :value="__('Email * (Use this as your Username when you are Login)')" />
 
-                                            <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                                            <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"/>
                                         </div>
 
                                         <!-- Password -->
@@ -397,7 +397,7 @@
                                             <x-input id="password" class="block mt-1 w-full"
                                                             type="password"
                                                             name="password"
-                                                            required autocomplete="new-password" />
+                                                            autocomplete="new-password" />
                                         </div>
 
                                         <!-- Confirm Password -->
@@ -406,7 +406,7 @@
 
                                             <x-input id="password_confirmation" class="block mt-1 w-full"
                                                             type="password"
-                                                            name="password_confirmation" required />
+                                                            name="password_confirmation"/>
                                         </div>
                                     </div>
                                     </br>
