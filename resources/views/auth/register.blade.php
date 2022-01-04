@@ -1046,13 +1046,16 @@ $('.yearselect').yearselect({
             eng_ability: "required",
             eng_test: "required",
             email: {
-                required: true
+                required: true,
+                email: true
             },
             password: {
-                required: true
+                required: true,
+                minlength: 8
             },
             password_confirmation: {
-                required: true
+                required: true,
+                equalTo: "#password"
             }
 
         }
