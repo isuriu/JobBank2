@@ -86,21 +86,21 @@
                                         <div class="mt-2">
                                             <x-label for="name" :value="__('Name *')" />
 
-                                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autofocus />
                                         </div>
                             
                                         <!-- Full Name -->
                                         <div class="mt-3">
                                             <x-label for="full_name" :value="__('Full Name *')" />
 
-                                            <x-input id="full_name" class="block mt-1 w-full" type="text" name="full_name" :value="old('full_name')" required autofocus />
+                                            <x-input id="full_name" class="block mt-1 w-full" type="text" name="full_name" :value="old('full_name')" autofocus />
                                         </div>
                                     
                                         <!-- Katakana Name -->
                                         <div class="mt-3">
                                             <x-label class="form-label" for="katakana_name" :value="__('Name in Katakana * (How to read the name in KATAKANA)')" />
                                             
-                                            <x-input id="katakana_name" class="block mt-1 w-full" type="text" name="katakana_name" :value="old('katakana_name')" required />
+                                            <x-input id="katakana_name" class="block mt-1 w-full" type="text" name="katakana_name" :value="old('katakana_name')"/>
                                         </div>
 
                                         <!-- Gender -->
@@ -122,7 +122,7 @@
                                         <div class="mt-3">
                                             <x-label class="form-label" for="dob" :value="__('Date of Birth *')" style="display: inline-block;" />
                                             
-                                            <x-input id="dob" class="block mt-1 w-full" type="date" name="dob" :value="old('dob')" style="width: auto; display: inline-block; margin-left: 20px;" required />
+                                            <x-input id="dob" class="block mt-1 w-full" type="date" name="dob" :value="old('dob')" style="width: auto; display: inline-block; margin-left: 20px;"/>
                                         </div>
 
                                         <!-- Nationality -->
@@ -1025,12 +1025,16 @@ $('.yearselect').yearselect({
     $("#form_reg_jap").validate({
 
         rules: {
-            name: {
-                required: true
-            },
-            full_name: {
-                required: true
-            }
+            name: "required",
+            full_name: "required",
+            katakana_name: "required",
+            katakana_name: "required",
+            gender: "required",
+            dob: "required",
+            nationality: "required",
+            telephone_number: "required",
+            "job_categories[]": "required",
+
         }
     });
  </script>
