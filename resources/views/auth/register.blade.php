@@ -116,6 +116,7 @@
                                                 <x-label class="form-check-label" for="gender2" :value="__('Female')" />
                                                 </label>
                                             </div>
+                                            <label class="error" style="display:none;">* Please pick an option above</label>
                                         </div>
 
                                         <!-- Date of Birth -->
