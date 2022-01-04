@@ -1058,7 +1058,14 @@ $('.yearselect').yearselect({
                 equalTo: "#password"
             }
 
-        }
+        },
+        messages: {
+        
+            password_confirmation: {
+                equalTo: "Password not match",
+            }
+
+        },
     });
  </script>
 
