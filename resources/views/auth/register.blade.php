@@ -1021,39 +1021,29 @@ $('.yearselect').yearselect({
 </script>
 
 <script>
-    if ($("#form_reg_jap").length > 0) {
-        $("#form_reg_jap").validate({
- 
-            rules: {
-                name: {
-                    required: true,
-                    maxlength: 50
-                },
- 
-                full_name: {
-                    required: true,
-                    maxlength: 50,
-                    email: true,
-                }
+
+    $("#form_reg_jap").validate({
+
+        rules: {
+            name: {
+                required: true
             },
-            messages: {
- 
-                name: {
-                    required: "Please enter name",
-                },
-                full_name: {
-                    required: "Please enter message",
-                }
- 
-            },
-        })
-    } 
+            full_name: {
+                required: true
+            }
+        }
+    });
  </script>
 
 <style>
 .items-center a img{
     visibility: hidden;
     height: 20px !important;
+}
+
+label.error {
+    color: #dc3545;
+    font-size: 14px;
 }
 </style>
 
