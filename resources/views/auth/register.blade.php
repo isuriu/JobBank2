@@ -116,7 +116,6 @@
                                                 <x-label class="form-check-label" for="gender2" :value="__('Female')" />
                                                 </label>
                                             </div>
-                                            <label class="error" style="display:none;">* Please pick an option above</label>
                                         </div>
 
                                         <!-- Date of Birth -->
@@ -1079,6 +1078,17 @@ $('.yearselect').yearselect({
 label.error {
     color: #dc3545;
     font-size: 14px;
+}
+
+#gender-error{
+    position: absolute;
+    left: 280px;
+}
+
+#job_categories[]-error{
+    position: absolute;
+    margin-top: -20px;
+    left: 120px;
 }
 </style>
 
