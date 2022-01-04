@@ -1034,6 +1034,26 @@ $('.yearselect').yearselect({
             nationality: "required",
             telephone_number: "required",
             "job_categories[]": "required",
+            school_type: "required",
+            school_name: "required",
+            course_name: "required",
+            yog: "required",
+            grad_month: "required",
+            work_exp: "required",
+            years_of_exp: "required",
+            jap_ability: "required",
+            jap_prof_test: "required",
+            eng_ability: "required",
+            eng_test: "required",
+            email: {
+                required: true
+            },
+            password: {
+                required: true
+            },
+            password_confirmation: {
+                required: true
+            }
 
         }
     });
