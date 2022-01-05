@@ -75,7 +75,16 @@
                 </div>
             </div>
         </section>
-        
+        <div>
+            <table id='empTable' class="single-job-items" width='100%' border="1" style='border-collapse: collapse;border: none;'>
+                <thead>
+                    <tr>
+                    <td>S.no</td>
+                    <td>Username</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
         <br>
         <div class="container">
             <!-- Tab links -->
