@@ -356,16 +356,12 @@ class JobsController extends Controller
                                 <p class="text-muted mb-0">'.$record->company_name.'</p>
                             </div>
                         </div>
-                        <div class="col-md-1">
-                            <div>
-                            </div>
-                        </div>
                         <div class="col-md-3">
                             <div>
                                 <p class="text-muted mb-0"><i class="fas fa-map-marker-alt text-custom"></i>'.$record->address.'</p>
                             </div>
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-2">
                             <div>
                                 <p class="text-muted mb-0 mo-mb-2" style="padding: 40px;"><span class="text-custom">&#165;</span>'.number_format($record->expected_salary, '0', '.', ',').'</p>
                             </div>
