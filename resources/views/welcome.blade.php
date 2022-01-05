@@ -220,8 +220,7 @@
 
         function dataTableLoad(){
 
-            var category = $("#select_category").val();
-                
+            var category = $("#select-category").val();
             var search_keyword = $('#search_keyword').val();
            
             var emptable = $('#empTable').DataTable({
