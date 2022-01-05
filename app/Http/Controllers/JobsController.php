@@ -377,7 +377,7 @@ class JobsController extends Controller
                     <div class="row">
                         <div class="col-md-10">
                             <div>
-                                <p class="text-muted mb-0 mo-mb-2" style="padding-left: 25px;"><a class="text-dark">Closing Date :</a><span style="color:red">'.$record->closing_date.'</span></p>
+                                <p class="text-muted mb-0 mo-mb-2" style="padding-left: 25px;"><span class="text-dark">Closing Date :</span>&nbsp;<span style="color:red">'.$record->closing_date.'</span></p>
                             </div>
                         </div>
                         <div class="col-md-2">
