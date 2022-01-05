@@ -246,8 +246,8 @@
 
             $(document).on("click","#submit",function() {
                 $.ajax({  //create an ajax request to display.php
-                    type: "GET",
-                    url: "getData3",
+                    type: "POST",
+                    url: "find_job",
                     data: { 
                         search_keyword: $("#search_keyword").val()
                     },  
