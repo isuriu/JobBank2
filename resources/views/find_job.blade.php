@@ -221,12 +221,7 @@
     }
     $(document).ready(function(){
 
-        if({{$keyword}}){
-            dataTableLoad(3);
-        }else{
-            dataTableLoad(1);
-        }
-        
+        dataTableLoad(1);
 
         $("#select_category, input[name='job_type[]'], input[name='posted_within[]']").change(function(){
             dataTableLoad(2);

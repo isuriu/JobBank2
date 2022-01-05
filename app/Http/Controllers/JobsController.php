@@ -98,21 +98,6 @@ class JobsController extends Controller
         return view('find_job', compact('jobdata','categories'));
     }
 
-    public function getData3(Request $request)
-    {
-        $keyword = $request->get('search_keyword');
-
-        $myArray=DB::table('jobs')
-                    ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-                    ->select('jobs.*', 'company_details.address')
-                    ->get();
-                    
-        $jobdata = $this->paginate($myArray);
-
-        $categories = job_categories::all();
-        
-        return view('find_job', compact('keyword','jobdata','categories'));
-    }
 
     /*public function getAjaxData(Request $request)
     {
@@ -315,6 +300,152 @@ class JobsController extends Controller
         exit;
     }
 
+    public function getAjaxData2(Request $request){
+
+        ## Read value
+        $draw = $request->get('draw');
+        $start = $request->get("start");
+        $rowperpage = $request->get("length"); // Rows display per page
+   
+        $columnIndex_arr = $request->get('order');
+        $columnName_arr = $request->get('columns');
+        $order_arr = $request->get('order');
+        $search_arr = $request->get('search');
+   
+        $columnIndex = $columnIndex_arr[0]['column']; // Column index
+        $columnName = $columnName_arr[$columnIndex]['data']; // Column name
+        $columnSortOrder = $order_arr[0]['dir']; // asc or desc
+        $searchValue = $search_arr['value']; // Search value
+
+        // Total records
+        $totalRecords = Job::select('count(*) as allcount')->count();
+
+        $job_Type_str = $request->get("job_type");
+        if(empty($job_Type_str)){
+            $job_Type_str = "F,P";
+        }
+        $job_type_arr = explode(",",$job_Type_str);
+
+        $posted_within = $request->get("posted_within");
+        $today_date = date('Y-m-d');
+        switch ($posted_within) {
+            case 'ALL':
+                $search_date = 0;
+                break;
+            case '1':
+                $search_date = 1;
+                break;
+            case '2':
+                $search_date = 2;
+                break;
+            case '3':
+                $search_date = 3;
+                break;
+            case '7':
+                $search_date = 7;
+                break;
+            case '14':
+                $search_date = 14;
+                break;
+            default:
+                $search_date = 0;
+        }
+        
+        
+        
+        
+        if($request->get('category') && $request->get('category') != 'ALL'){
+            $category = $request->get('category');
+
+           
+            $records = DB::table('jobs')
+            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+            ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
+            ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+            ->whereIn('job_type', $job_type_arr)
+            ->select('jobs.*', 'company_details.address')
+            ->orderBy($columnName,$columnSortOrder)
+            ->skip($start)
+            ->take($rowperpage)
+            ->get();   
+            
+            $totalRecordswithFilter = DB::table('jobs')
+            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+            ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
+            ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+            ->whereIn('job_type', $job_type_arr)
+            ->select('jobs.*', 'company_details.address')->count();
+            
+            
+
+        }else{
+
+           
+            $records = DB::table('jobs')
+            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+            ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
+            ->whereIn('job_type', $job_type_arr)
+            ->select('jobs.*', 'company_details.address')
+            ->orderBy($columnName,$columnSortOrder)
+            ->skip($start)
+            ->take($rowperpage)
+            ->get();
+
+            $totalRecordswithFilter = DB::table('jobs')
+            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+            ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
+            ->whereIn('job_type', $job_type_arr)
+            ->select('jobs.*', 'company_details.address')->count();
+           
+            
+        }
+
+ 
+        $data_arr = array();
+        
+        foreach($records as $record){
+           $id = '<div class="job-tittle job-tittle2">
+                    <a href="#">
+                        <h4>'.$record->job_title.'</h4>
+                    </a>
+                    <ul>
+                        <li>'.$record->company_name.'</li>
+                        <li><i class="fas fa-map-marker-alt"></i>&nbsp;'.$record->address.'</li>
+                        <li>&#165;'.number_format($record->expected_salary, '0', '.', ',').'</li>
+                    </ul>
+                </div>';
+
+                if ($record->job_type == 'F')
+                    $job_type = "Full Time";
+                else
+                    $job_type = "Part Time";
+
+           $username = '<div class="items-link items-link2 f-right">
+                        <span>
+                            '.$job_type.'
+                        </span>
+                        <span>'.date('Y-m-d', strtotime($record->closing_date)).'</span>
+                        <br>
+                        <a href="/job_details/'.$record->job_id.'/find">See More >></a>
+                    </div>';
+   
+           $data_arr[] = array(
+             "id" => $id,
+             "username" => $username
+           );
+        }
+
+   
+        $response = array(
+           "draw" => intval($draw),
+           "iTotalRecords" => $totalRecords,
+           "iTotalDisplayRecords" => $totalRecordswithFilter,
+           "aaData" => $data_arr
+        );
+   
+        echo json_encode($response);
+        exit;
+    }
 
     public function homeJobList(Request $request){
 

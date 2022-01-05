@@ -25,10 +25,6 @@ Route::get('/post-resume', function () {
     return view('find_job');
 });*/
 Route::get('/find_job','App\Http\Controllers\JobsController@getData2');
-//Route::get('/getData3','App\Http\Controllers\JobsController@getData3');
-Route::post('/find_job', function () {
-    return view('find_job');
-});
 
 
 Route::get('/post_jobs', function () {
@@ -54,6 +50,8 @@ Route::get('/find_jobs','App\Http\Controllers\JobsController@getData');
 
 //Route::get('/ajax_get_jobs','App\Http\Controllers\JobsController@getAjaxData');
 Route::get('/ajax_get_jobs','App\Http\Controllers\JobsController@getAjaxData')->name('ajax_get_jobs');
+Route::get('/ajax_get_jobs2','App\Http\Controllers\JobsController@getAjaxData2')->name('ajax_get_jobs2');
+
 
 Route::get('/profile', function () {
     return view('profile');
