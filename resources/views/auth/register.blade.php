@@ -1124,16 +1124,18 @@ label.error {
     font-size: 14px;
 }
 
-#gender-error{
+#gender-error, #gender_foreign-error{
     position: absolute;
     left: 280px;
 }
 
-#job_categories\[\]-error{
+#job_categories\[\]-error, #job_categories2\[\]-error{
     position: absolute;
     margin-top: -20px;
     left: 120px;
 }
+
+
 </style>
 
 </html>
