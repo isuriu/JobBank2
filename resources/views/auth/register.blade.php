@@ -14,7 +14,7 @@
     @include('../layouts/navigation_home')
 
     <div class="regheaderimg text-left">
-        <span class="reg-h1">Please Choose Your Role to</span><span class="theme-color">Register</span>
+        <span class="reg-h1">Please Choose Your Role to <span style="color:#f76f0e">Register</span></span>
         <span class="reg-h2">If you are an User who is looking for job oppertunities, please choose "Apply for a Job" </span>
         <span class="reg-h2">Or If you are a Compnay who is looking for post your job oppertunities, please choose "Post a Job" </span>
     </div>
