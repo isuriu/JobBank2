@@ -892,7 +892,7 @@
                 <!-- Validation Errors -->
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
                 <div>
-                    <form method="POST" action="{{ route('register') }}">
+                    <form id="post_jobs" method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-card-inner">
@@ -933,6 +933,14 @@
 
                                 <x-input id="company_phone" class="block mt-1 w-full" type="text" name="company_phone" :value="old('company_phone')" required/>
                             </div>
+                            
+                        </div>
+
+                        <div class="form-card-inner">
+                            <!-- Account Info -->
+                            <span class="form-card-title">
+                                <x-label for="account_info3" :value="__('Account Information (For your Login Credentials) ')" style="font size: 25px !important;font-weight: bold !important;background-color: #2bcdfd42"/>
+                            </span>
                             <!-- Email -->
                             <div class="mt-3">
                                 <x-label for="company_email" :value="__('Email *')" />
@@ -958,6 +966,8 @@
                                                 name="password_confirmation" required />
                             </div>
                         </div>
+
+
                         </br>
 
                         <span style="color:red;font-weight:bold;">{{ __('Note : ') }}</span>
@@ -1110,6 +1120,29 @@ $('.yearselect').yearselect({
             }
 
         },
+    });
+
+    $("#post_jobs").validate({
+
+        rules: {
+            name: "required",
+            company_desc: "required",
+            company_address: "required",
+            company_reg: "required",
+            company_phone: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 8
+            },
+            password_confirmation: {
+                required: true,
+                equalTo: "#password3"
+            }
+        }
     });
  </script>
 
