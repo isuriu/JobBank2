@@ -1099,7 +1099,7 @@ $('.yearselect').yearselect({
             },
             password_confirmation: {
                 required: true,
-                equalTo: "#password"
+                equalTo: "#password2"
             }
 
         },
