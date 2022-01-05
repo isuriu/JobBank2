@@ -218,41 +218,30 @@
 
         <script type=text/javascript>
 
-        function dataTableLoad(type){
+        function dataTableLoad(){
 
-            if(type == 1){
-                var emptable = $('#empTable').DataTable({
-                    processing: true,
-                    serverSide: true,
-                    "lengthMenu": [ 5, 10, 25, 50 ],
-                    "pageLength":5,
-                    "ajax": {
-                        "url": "{{route('ajax_get_jobs2')}}"
-                    },
-                    columns: [
-                        { data: 'id' },
-                        { data: 'username' }
-                    ]
-                });
-            }else if(type == 2){
-                var category = $("#select_category").val();
-                var job_type = '';
-                $('input[name="job_type[]"]:checked').each(function() {
-                    
-                    job_type += $(this).val()+',';
-                });
-                job_type = job_type.slice(0,-1);
-                if(job_type === ''){
-                    job_type = "F,P"
-                }
-
-                var posted_within = $('input[name="posted_within[]"]:checked').val();
+            var category = $("#select_category").val();
                 
-                $('#empTable').DataTable().ajax.url("{{route('ajax_get_jobs')}}?category="+category+"&job_type="+job_type+"&posted_within="+posted_within).load();
-            }else if(type == 3){
-                
-                $('#empTable').DataTable().ajax.url("{{route('ajax_get_jobs')}}?keyword=fgf").load();
-            }
+            var search_keyword = $('#search_keyword').val();
+           
+            var emptable = $('#empTable').DataTable({
+                processing: true,
+                serverSide: true,
+                "lengthMenu": [ 5, 10, 25, 50 ],
+                "pageLength":5,
+                "ajax": {
+                    "url": "{{route('ajax_get_jobs2')}}",
+                    data: { 
+                        category: category,
+                        keyword: search_keyword
+                    }
+                },
+                columns: [
+                    { data: 'id' },
+                    { data: 'username' }
+                ]
+            });
+            
 
         }
 
@@ -295,7 +284,7 @@
             });
 
             $(document).on("click","#submit",function() {
-                dataTableLoad(1);
+                dataTableLoad();
             });
         });
       

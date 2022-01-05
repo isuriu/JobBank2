@@ -319,88 +319,29 @@ class JobsController extends Controller
 
         // Total records
         $totalRecords = Job::select('count(*) as allcount')->count();
-
-        $job_Type_str = $request->get("job_type");
-        if(empty($job_Type_str)){
-            $job_Type_str = "F,P";
-        }
-        $job_type_arr = explode(",",$job_Type_str);
-
-        $posted_within = $request->get("posted_within");
-        $today_date = date('Y-m-d');
-        switch ($posted_within) {
-            case 'ALL':
-                $search_date = 0;
-                break;
-            case '1':
-                $search_date = 1;
-                break;
-            case '2':
-                $search_date = 2;
-                break;
-            case '3':
-                $search_date = 3;
-                break;
-            case '7':
-                $search_date = 7;
-                break;
-            case '14':
-                $search_date = 14;
-                break;
-            default:
-                $search_date = 0;
-        }
         
-        
-        
-        
-        if($request->get('category') && $request->get('category') != 'ALL'){
-            $category = $request->get('category');
-
+        $category = $request->get('category');
+        $keyword = $request->get('keyword');
            
-            $records = DB::table('jobs')
-            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-            ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
-            ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
-            ->whereIn('job_type', $job_type_arr)
-            ->select('jobs.*', 'company_details.address')
-            ->orderBy($columnName,$columnSortOrder)
-            ->skip($start)
-            ->take($rowperpage)
-            ->get();   
-            
-            $totalRecordswithFilter = DB::table('jobs')
-            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-            ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
-            ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
-            ->whereIn('job_type', $job_type_arr)
-            ->select('jobs.*', 'company_details.address')->count();
-            
+        $records = DB::table('jobs')
+        ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+        ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
+        ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+        ->whereIn('job_type', $job_type_arr)
+        ->select('jobs.*', 'company_details.address')
+        ->orderBy($columnName,$columnSortOrder)
+        ->skip($start)
+        ->take($rowperpage)
+        ->get();   
+        
+        $totalRecordswithFilter = DB::table('jobs')
+        ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+        ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
+        ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+        ->whereIn('job_type', $job_type_arr)
+        ->select('jobs.*', 'company_details.address')->count();
             
 
-        }else{
-
-           
-            $records = DB::table('jobs')
-            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-            ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
-            ->whereIn('job_type', $job_type_arr)
-            ->select('jobs.*', 'company_details.address')
-            ->orderBy($columnName,$columnSortOrder)
-            ->skip($start)
-            ->take($rowperpage)
-            ->get();
-
-            $totalRecordswithFilter = DB::table('jobs')
-            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-            ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
-            ->whereIn('job_type', $job_type_arr)
-            ->select('jobs.*', 'company_details.address')->count();
-           
-            
-        }
-
- 
         $data_arr = array();
         
         foreach($records as $record){
