@@ -363,12 +363,12 @@ class JobsController extends Controller
                         </div>
                         <div class="col-md-2">
                             <div>
-                                <p class="text-muted mb-0 mo-mb-2" style="padding: 40px;"><span class="text-custom">&#165;</span>'.number_format($record->expected_salary, '0', '.', ',').'</p>
+                                <p class="text-muted mb-0 mo-mb-2"><span class="text-custom">&#165;</span>'.number_format($record->expected_salary, '0', '.', ',').'</p>
                             </div>
                         </div>
                         <div class="col-md-1">
                             <div>
-                                <p class="text-muted mb-0" style="padding: 40px;">'.$job_type.'</p>
+                                <p class="text-muted mb-0">'.$job_type.'</p>
                             </div>
                         </div>
                     </div>
