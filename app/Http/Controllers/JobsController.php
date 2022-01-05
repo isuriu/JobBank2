@@ -325,9 +325,7 @@ class JobsController extends Controller
            
         $records = DB::table('jobs')
         ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-        ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
         ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
-        ->whereIn('job_type', $job_type_arr)
         ->select('jobs.*', 'company_details.address')
         ->orderBy($columnName,$columnSortOrder)
         ->skip($start)
@@ -336,9 +334,7 @@ class JobsController extends Controller
         
         $totalRecordswithFilter = DB::table('jobs')
         ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-        ->where('jobs.job_title', 'like', '%' .$searchValue . '%')
         ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
-        ->whereIn('job_type', $job_type_arr)
         ->select('jobs.*', 'company_details.address')->count();
             
 
