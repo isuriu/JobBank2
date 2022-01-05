@@ -1072,7 +1072,7 @@ $('.yearselect').yearselect({
         messages: {
         
             password_confirmation: {
-                equalTo: "Password not match",
+                equalTo: "Password Not Matching",
             }
 
         },
@@ -1114,10 +1114,10 @@ $('.yearselect').yearselect({
             }
 
         },
-        messages: {
-
+            messages: {
+            
             password_confirmation: {
-                equalTo: "Password not match",
+                equalTo: "Password Not Matching",
             }
 
         },
@@ -1143,7 +1143,14 @@ $('.yearselect').yearselect({
                 required: true,
                 equalTo: "#password3"
             }
-        }
+        },
+                messages: {
+                
+                password_confirmation: {
+                    equalTo: "Password Not Matching",
+                }
+
+            },
     });
  </script>
 
