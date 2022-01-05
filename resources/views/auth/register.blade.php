@@ -933,8 +933,9 @@
 
                                 <x-input id="company_phone" class="block mt-1 w-full" type="text" name="company_phone" :value="old('company_phone')" required/>
                             </div>
-                            
                         </div>
+
+                        </br>
 
                         <div class="form-card-inner">
                             <!-- Account Info -->
