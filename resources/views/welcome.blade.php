@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="home-registration-form">
-                            <form class="registration-form" method="GET" action="/find_job">
+                            <form class="registration-form">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="row">
@@ -63,7 +63,7 @@
                                             </div>
                                             <div class="col-lg-4 col-md-4" style="padding: 5px;">
                                                 <div class="registration-form-box">
-                                                    <input type="submit" id="submit" name="send" class="btn btn-primary span1" value="Search Job" style="width: 100%;">
+                                                    <input type="button" id="submit" name="send" class="btn btn-primary span1" value="Search Job" style="width: 100%;">
                                                 </div>
                                             </div>
                                         </div>
@@ -240,6 +240,19 @@
                             $("#fulltime_jobs").html(data);
                         }
                         
+                    }
+                });
+            });
+
+            $(document).on("click","#submit",function() {
+                $.ajax({  //create an ajax request to display.php
+                    type: "POST",
+                    url: "getData3",
+                    data: { 
+                        search_keyword: $("#search_keyword").val();
+                    },  
+                    success: function (data) {
+                        //$("#recent_jobs").html(data);
                     }
                 });
             });
