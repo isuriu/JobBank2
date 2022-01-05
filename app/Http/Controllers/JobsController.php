@@ -101,8 +101,17 @@ class JobsController extends Controller
     public function getData3(Request $request)
     {
         $keyword = $request->get('search_keyword');
+
+        $myArray=DB::table('jobs')
+                    ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                    ->select('jobs.*', 'company_details.address')
+                    ->get();
+                    
+        $jobdata = $this->paginate($myArray);
+
+        $categories = job_categories::all();
         
-        return view('find_job', compact('keyword'));
+        return view('find_job', compact('keyword','jobdata','categories'));
     }
 
     /*public function getAjaxData(Request $request)
