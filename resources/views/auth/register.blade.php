@@ -939,7 +939,7 @@
                         <div class="form-card-inner">
                             <!-- Account Info -->
                             <span class="form-card-title">
-                                <x-label for="account_info3" :value="__('Account Information (For your Login Credentials) ')" style="font size: 25px !important;font-weight: bold !important;background-color: #2bcdfd42"/>
+                                <x-label for="account_info3" :value="__('Account Information (For your Login Credentials) ')" style="font size: 25px !important;font-weight: bold !important;background-color: #ffc69e"/>
                             </span>
                             <!-- Email -->
                             <div class="mt-3">
