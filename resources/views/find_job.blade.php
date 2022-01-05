@@ -213,9 +213,6 @@
             var posted_within = $('input[name="posted_within[]"]:checked').val();
             
             $('#empTable').DataTable().ajax.url("{{route('ajax_get_jobs')}}?category="+category+"&job_type="+job_type+"&posted_within="+posted_within).load();
-        }else if(type == 3){
-            var keyword = {{$keyword}};
-            $('#empTable').DataTable().ajax.url("{{route('ajax_get_jobs')}}?keyword="+keyword).load();
         }
         
     }

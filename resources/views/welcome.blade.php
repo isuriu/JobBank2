@@ -293,17 +293,7 @@
             });
 
             $(document).on("click","#submit",function() {
-                $.ajax({  //create an ajax request to display.php
-                    type: "POST",
-                    url: "find_job",
-                    data: { 
-                        "_token": "{{ csrf_token() }}",
-                        search_keyword: $("#search_keyword").val()
-                    },  
-                    success: function (data) {
-                        //$("#recent_jobs").html(data);
-                    }
-                });
+                dataTableLoad(3);
             });
         });
       
