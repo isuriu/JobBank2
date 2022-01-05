@@ -446,7 +446,7 @@
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
                             <div>
-                                <form method="POST" action="{{ route('register') }}">
+                                <form id="form_reg_for" method="POST" action="{{ route('register') }}">
                                     @csrf
 
                                     <div class="form-card-inner">
@@ -461,14 +461,14 @@
                                         <div class="mt-2">
                                             <x-label for="name2" :value="__('Name *')" />
 
-                                            <x-input id="name2" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                                            <x-input id="name2" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autofocus />
                                         </div>
                             
                                         <!-- Full Name -->
                                         <div class="mt-3">
                                             <x-label for="full_name2" :value="__('Full Name *')" />
 
-                                            <x-input id="full_name2" class="block mt-1 w-full" type="text" name="full_name2" :value="old('full_name2')" required autofocus />
+                                            <x-input id="full_name2" class="block mt-1 w-full" type="text" name="full_name2" :value="old('full_name2')"/>
                                         </div>
                                     
                                         <!-- Katakana Name -->
@@ -497,7 +497,7 @@
                                         <div class="mt-3">
                                             <x-label class="form-label" for="dob2" :value="__('Date of Birth *')" style="display: inline-block;" />
                                             
-                                            <x-input id="dob2" class="block mt-1 w-full" type="date" name="dob2" :value="old('dob2')" style="width: auto; display: inline-block; margin-left: 20px;" required />
+                                            <x-input id="dob2" class="block mt-1 w-full" type="date" name="dob2" :value="old('dob2')" style="width: auto; display: inline-block; margin-left: 20px;" />
                                         </div>
 
                                         <!-- Nationality -->
@@ -511,7 +511,7 @@
                                         <div class="mt-3">
                                             <x-label class="form-label" for="telephone_number2" :value="__('Telephone Number *  (Must Contain Only Digits)')" />
                                             
-                                            <x-input id="telephone_number2" class="block mt-1 w-full" type="text" name="telephone_number2" :value="old('telephone_number2')" onkeypress="return magicvalidation(event)" required />
+                                            <x-input id="telephone_number2" class="block mt-1 w-full" type="text" name="telephone_number2" :value="old('telephone_number2')" onkeypress="return magicvalidation(event)" />
                                         </div>
 
                                         <!-- Categories -->
@@ -558,7 +558,7 @@
                                         <div class="mt-3">
                                             <x-label for="school_name2_home" :value="__('University / Collage / Institute Name *')" />
 
-                                            <x-input id="school_name2_home" class="block mt-1 w-full" type="text" name="school_name2_home" :value="old('school_name2_home')" required/>
+                                            <x-input id="school_name2_home" class="block mt-1 w-full" type="text" name="school_name2_home" :value="old('school_name2_home')" />
                                         </div>
 
 
@@ -566,13 +566,13 @@
                                         <div class="mt-3">
                                             <x-label for="course_name2_home" :value="__('Degree Name / Major Subject / Course Name *')" />
 
-                                            <x-input id="course_name2_home" class="block mt-1 w-full" type="text" name="course_name2_home" :value="old('course_name2_home')" required/>
+                                            <x-input id="course_name2_home" class="block mt-1 w-full" type="text" name="course_name2_home" :value="old('course_name2_home')" />
                                         </div>
 
                                         <!-- Year of Graduation Homeland-->
                                         <div class="mt-3">
                                             <x-label class="form-label" for="yog2_home" :value="__('Year of Graduation *')" style="display: inline-block;" />
-                                            <select class="yearselect form-select" id="yog2_home" name="yog2_home" required></select>
+                                            <select class="yearselect form-select" id="yog2_home" name="yog2_home" ></select>
                                         </div>
 
                                         <!-- Graduation Month Homeland-->
@@ -641,7 +641,7 @@
                                         <!-- Year of Graduation -->
                                         <div class="mt-3">
                                             <x-label class="form-label" for="yog2" :value="__('Year of Graduation')" style="display: inline-block;"/>
-                                            <select class="yearselect form-select" id="yog2" name="yog2" required></select>
+                                            <select class="yearselect form-select" id="yog2" name="yog2" ></select>
                                         </div>
 
                                         <!-- Graduation Month -->
@@ -831,7 +831,7 @@
                                         <div class="mt-2">
                                             <x-label for="email2" :value="__('Email * (Use this as your Username when you are Login)')" />
 
-                                            <x-input id="email2" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                                            <x-input id="email2" class="block mt-1 w-full" type="email" name="email" :value="old('email')" />
                                         </div>
 
                                         <!-- Password -->
@@ -841,7 +841,7 @@
                                             <x-input id="password2" class="block mt-1 w-full"
                                                             type="password"
                                                             name="password"
-                                                            required autocomplete="new-password" />
+                                                            autocomplete="new-password" />
                                         </div>
 
                                         <!-- Confirm Password -->
@@ -850,7 +850,7 @@
 
                                             <x-input id="password_confirmation2" class="block mt-1 w-full"
                                                             type="password"
-                                                            name="password_confirmation" required />
+                                                            name="password_confirmation" />
                                         </div>
                                     </div>
                                     </br>
@@ -1028,7 +1028,6 @@ $('.yearselect').yearselect({
             name: "required",
             full_name: "required",
             katakana_name: "required",
-            katakana_name: "required",
             gender: "required",
             dob: "required",
             nationality: "required",
@@ -1061,6 +1060,51 @@ $('.yearselect').yearselect({
         },
         messages: {
         
+            password_confirmation: {
+                equalTo: "Password not match",
+            }
+
+        },
+    });
+
+    $("#form_reg_for").validate({
+
+        rules: {
+            name: "required",
+            full_name2: "required",
+            katakana_name2: "required",
+            gender_foreign: "required",
+            dob2: "required",
+            nationality2: "required",
+            telephone_number2: "required",
+            "job_categories2[]": "required",
+            school_type2_home: "required",
+            school_name2_home: "required",
+            course_name2_home: "required",
+            yog2_home: "required",
+            grad_month2_home: "required",
+            work_exp2: "required",
+            years_of_exp2: "required",
+            jap_ability2: "required",
+            jap_prof_test2: "required",
+            eng_ability2: "required",
+            eng_test2: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 8
+            },
+            password_confirmation: {
+                required: true,
+                equalTo: "#password"
+            }
+
+        },
+        messages: {
+
             password_confirmation: {
                 equalTo: "Password not match",
             }
