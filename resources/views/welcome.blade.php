@@ -119,7 +119,7 @@
                         <ul id="counter">
                                 <li><div class="counter-value" data-count="15" style="display: inline-block;">0</div><div style="display: inline-block;">K</div><span style="display: block;">Job Offers</span></li>
                                 <li><div class="counter-value" data-count="4982">3000</div><span style="display: block;">Members</span></li>
-                                <li><div class="counter-value" data-count="768">600</div><span style="display: block;">Resume Posted</span></li>
+                                <li><div class="counter-value" data-count="768">600</div><span style="display: block;">Resumes Posted</span></li>
                         </ul>
                     </div> 
                 </div>
