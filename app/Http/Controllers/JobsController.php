@@ -350,17 +350,17 @@ class JobsController extends Controller
                                 <img src="img/job-icon.png" alt="" class="img-fluid mx-auto d-block" style="width:70%">
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div>
                                 <h5 class="f-18"><a href="#" class="text-dark">'.$record->job_title.'</a></h5>
                                 <p class="text-muted mb-0">'.$record->company_name.'</p>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <div>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <div>
                                 <p class="text-muted mb-0"><i class="fas fa-map-marker-alt text-custom"></i>'.$record->address.'</p>
                             </div>
@@ -370,7 +370,7 @@ class JobsController extends Controller
                                 <p class="text-muted mb-0 mo-mb-2" style="padding: 40px;"><span class="text-custom">&#165;</span>'.number_format($record->expected_salary, '0', '.', ',').'</p>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <div>
                                 <p class="text-muted mb-0" style="padding: 40px;">'.$job_type.'</p>
                             </div>
