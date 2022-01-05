@@ -295,7 +295,7 @@
             });
 
             $(document).on("click","#submit",function() {
-                dataTableLoad(3);
+                dataTableLoad(1);
             });
         });
       
