@@ -113,14 +113,13 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" style="background-color: #ff8e3e;color:#fff;padding-right: 0px !important;">
                     <div style="padding: 60px 120px 5px;">
                         <h3>Job Bank Stats</h3>
-                        <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        <p>You can get a rough idea about our preformance by looking below real time statistics about No of jobs to apply, No of active Members registered and No of Resumes posted so far.</p>
                     </div>
                     <div style="padding: 0 85px 100px 80px;">
                         <ul id="counter">
                                 <li><div class="counter-value" data-count="15" style="display: inline-block;">0</div><div style="display: inline-block;">K</div><span style="display: block;">Job Offers</span></li>
                                 <li><div class="counter-value" data-count="4982">3000</div><span style="display: block;">Members</span></li>
                                 <li><div class="counter-value" data-count="768">600</div><span style="display: block;">Resume Posted</span></li>
-                                <li><div class="counter-value" data-count="90" style="display: inline-block;">0</div><div style="display: inline-block;">%</div><span style="display: block;">Client who Rehier</span></li>
                         </ul>
                     </div> 
                 </div>
