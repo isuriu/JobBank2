@@ -7,6 +7,7 @@
         <title>Laravel</title>
 
         @include('layouts/links')
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />    
 
     </head>
     <body class="antialiased">
@@ -210,6 +211,7 @@
 
         
         @include('layouts/scripts')
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
         </div>
 
         @include('layouts/footer')
