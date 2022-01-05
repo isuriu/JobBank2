@@ -249,7 +249,7 @@
                     type: "POST",
                     url: "getData3",
                     data: { 
-                        search_keyword: $("#search_keyword").val();
+                        search_keyword: $("#search_keyword").val()
                     },  
                     success: function (data) {
                         //$("#recent_jobs").html(data);
