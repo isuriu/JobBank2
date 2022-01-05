@@ -98,6 +98,13 @@ class JobsController extends Controller
         return view('find_job', compact('jobdata','categories'));
     }
 
+    public function getData3(Request $request)
+    {
+        $keyword = $request->get('search_keyword');
+        
+        return view('find_job', compact('keyword'));
+    }
+
     /*public function getAjaxData(Request $request)
     {
         $myArray=DB::table('jobs')

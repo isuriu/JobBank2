@@ -213,12 +213,20 @@
             var posted_within = $('input[name="posted_within[]"]:checked').val();
             
             $('#empTable').DataTable().ajax.url("{{route('ajax_get_jobs')}}?category="+category+"&job_type="+job_type+"&posted_within="+posted_within).load();
+        }else if(type == 3){
+            var keyword = {{$keyword}};
+            $('#empTable').DataTable().ajax.url("{{route('ajax_get_jobs')}}?keyword="+keyword).load();
         }
         
     }
     $(document).ready(function(){
 
-        dataTableLoad(1);
+        if({{$keyword}}){
+            dataTableLoad(3);
+        }else{
+            dataTableLoad(1);
+        }
+        
 
         $("#select_category, input[name='job_type[]'], input[name='posted_within[]']").change(function(){
             dataTableLoad(2);

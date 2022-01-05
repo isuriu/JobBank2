@@ -25,6 +25,7 @@ Route::get('/post-resume', function () {
     return view('find_job');
 });*/
 Route::get('/find_job','App\Http\Controllers\JobsController@getData2');
+Route::post('/find_job','App\Http\Controllers\JobsController@getData3');
 
 Route::get('/post_jobs', function () {
     $data=App\Models\job_categories::all();

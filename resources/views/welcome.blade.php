@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="home-registration-form">
-                            <form class="registration-form">
+                            <form class="registration-form" method="GET" action="/find_job">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="row">
@@ -45,7 +45,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"><i class="fa fa-briefcase"></i></span>
                                                     </div>
-                                                    <input type="text" id="" class="form-control span1" placeholder="Job keywords (eg: IT)" style="border-left: none;">
+                                                    <input type="text" id="search_keyword" name="search_keyword" class="form-control span1" placeholder="Job keywords (eg: IT)" style="border-left: none;">
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-4" style="padding: 5px;">
