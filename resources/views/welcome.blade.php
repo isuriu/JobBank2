@@ -246,7 +246,7 @@
 
             $(document).on("click","#submit",function() {
                 $.ajax({  //create an ajax request to display.php
-                    type: "POST",
+                    type: "GET",
                     url: "getData3",
                     data: { 
                         search_keyword: $("#search_keyword").val()
