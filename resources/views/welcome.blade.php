@@ -249,6 +249,7 @@
                     type: "POST",
                     url: "find_job",
                     data: { 
+                        "_token": "{{ csrf_token() }}",
                         search_keyword: $("#search_keyword").val()
                     },  
                     success: function (data) {
