@@ -101,8 +101,8 @@
                                                     @foreach($applied_data as $cat)
                                                         <li class="li complete">
                                                             <div class="timestamp">
-                                                            <span class="author">$cat->job_title</span>
-                                                            <span class="date">$cat->closing_date<span>
+                                                            <span class="author">{{$cat->job_title}}</span>
+                                                            <span class="date">{{$cat->closing_dat}}e<span>
                                                             </div>
                                                             <div class="status">
                                                             <h4>  </h4>
