@@ -52,13 +52,9 @@
                                             <div class="col-lg-4 col-md-4" style="padding: 5px;">
                                                 <div class="registration-form-box">
                                                     <select id="select-category" class="span1" style="width: 100%;">
-                                                        <option></option>
-                                                        <option value="1">Developing</option>
-                                                        <option value="2">Designing</option>
-                                                        <option value="3">Engineering</option>
-                                                        <option value="4">Doctor</option>
-                                                        <option value="5">Business Management</option>
-                                                        <option value="6">Artist</option>
+                                                        @foreach($categories as $cat)
+                                                            <option value="{{$cat->id}}">{{$cat->category_name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
