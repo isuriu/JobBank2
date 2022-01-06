@@ -542,7 +542,8 @@ class JobsController extends Controller
 
     public function getJobData($id,$page)
     {
-        $jobdata=Job::find($id);
+        //$jobdata=Job::find($id);
+        $jobdata=where('job_id', $id);
 
         $logged_user = Auth::user()->email;
 
