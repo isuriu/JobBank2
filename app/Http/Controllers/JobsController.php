@@ -595,11 +595,12 @@ class JobsController extends Controller
     public function getData3()
     {
         $job_count=DB::table('jobs')->count();
-        $applied_count = DB::table('users')->count();
+        $user_count = DB::table('users')->count();
+        $applied_count = applied_jobs::where($condition_arr)->count();
 
         $categories = job_categories::all();
         
-        return view('welcome', compact('categories','job_count','user_count'));
+        return view('welcome', compact('categories','job_count','user_count','applied_count'));
     }
 
 
