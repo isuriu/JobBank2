@@ -330,7 +330,7 @@ class JobsController extends Controller
         $records = DB::table('jobs')
         ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
         ->where(function($query) {
-            $query->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+            $query->whereRaw('FIND_IN_SET("'.$category.'",jobs.categories)')
                 ->orwhereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)');
         })
         ->select('jobs.*', 'company_details.address')
@@ -342,7 +342,7 @@ class JobsController extends Controller
         $totalRecordswithFilter = DB::table('jobs')
         ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
         ->where(function($query) {
-            $query->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+            $query->whereRaw('FIND_IN_SET("'.$category.'",jobs.categories)')
                 ->orwhereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)');
         })
         ->select('jobs.*', 'company_details.address')->count();
