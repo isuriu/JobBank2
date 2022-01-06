@@ -336,7 +336,7 @@ class JobsController extends Controller
         $totalRecordswithFilter = DB::table('jobs')
         ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
         ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
-        ->whereRaw('FIND_IN_SET('.$keyword.',jobs.key_words)')
+        ->whereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)')
         ->select('jobs.*', 'company_details.address')->count();
             
 
