@@ -82,7 +82,7 @@
                 
                 <div class="modal-body">
 
-                    <input type="hidden" name="job_id" value="{{$jobdata->job_id}}">
+                    <input type="hidden" name="job_id" value="{{$jobdata->id}}">
 
                     <!-- Name -->
                     <div class="mt-2">
