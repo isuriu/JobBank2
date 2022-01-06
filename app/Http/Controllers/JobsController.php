@@ -280,7 +280,7 @@ class JobsController extends Controller
                         </span>
                         <span>'.date('Y-m-d', strtotime($record->closing_date)).'</span>
                         <br>
-                        <a href="/job_details/'.$record->job_id.'/find">See More >></a>
+                        <a href="/job_details/'.$record->id.'/find">See More >></a>
                     </div>';
    
            $data_arr[] = array(
@@ -542,8 +542,8 @@ class JobsController extends Controller
 
     public function getJobData($id,$page)
     {
-        //$jobdata=Job::find($id);
-        $jobdata=Job::where('job_id', $id)->get();
+        $jobdata=Job::find($id);
+        //$jobdata=Job::where('job_id', $id)->get();
 
         $logged_user = Auth::user()->email;
 
