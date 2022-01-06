@@ -52,6 +52,7 @@
                                             <div class="col-lg-4 col-md-4" style="padding: 5px;">
                                                 <div class="registration-form-box">
                                                     <select id="select-category" class="span1" style="width: 100%;">
+                                                        <option>Select Category</option>
                                                         @foreach($categories as $cat)
                                                             <option value="{{$cat->id}}">{{$cat->category_name}}</option>
                                                         @endforeach
