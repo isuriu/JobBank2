@@ -41,7 +41,7 @@
                             </div>
                             <div class="col-lg-6" style="text-align: center;">
                                 <h5 class="card-title">Approved Jobs</h5>
-                                <p class="card-text" style="font-size: 30px;">10</p>
+                                <p class="card-text" style="font-size: 30px;">0</p>
                             </div>
                             <div class="col-lg-2">
                             </div>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="col-lg-6" style="text-align: center;">
                                 <h5 class="card-title">Similar Jobs</h5>
-                                <p class="card-text" style="font-size: 30px;">10</p>
+                                <p class="card-text" style="font-size: 30px;">0</p>
                             </div>
                             <div class="col-lg-2">
                             </div>
@@ -75,7 +75,7 @@
                             </div>
                             <div class="col-lg-6" style="text-align: center;">
                                 <h5 class="card-title">Applied Jobs</h5>
-                                <p class="card-text" style="font-size: 30px;">10</p>
+                                <p class="card-text" style="font-size: 30px;">0</p>
                             </div>
                             <div class="col-lg-2">
                             </div>
@@ -97,16 +97,24 @@
                                             <div class="panel-heading"></div>  
                                             <div class="panel-body">  
                                                 <ul class="timeline" id="timeline">
-                                                    <li class="li complete">
-                                                        <div class="timestamp">
-                                                        <span class="author">Abhi Sharma</span>
-                                                        <span class="date">11/15/2014<span>
-                                                        </div>
-                                                        <div class="status">
-                                                        <h4> Shift Created </h4>
-                                                        </div>
-                                                    </li>
-                                                    <li class="li complete">
+                                                @if (count($applied_data) > 0)
+                                                    @foreach($applied_data as $cat)
+                                                        <li class="li complete">
+                                                            <div class="timestamp">
+                                                            <span class="author">$cat->job_title</span>
+                                                            <span class="date">$cat->closing_date<span>
+                                                            </div>
+                                                            <div class="status">
+                                                            <h4>  </h4>
+                                                            </div>
+                                                        </li>
+                                                    @endforeach
+                                                @else
+                                                    <span>No data found</span>
+                                                @endif
+                                                    
+                                                    
+                                                    <!--<li class="li complete">
                                                         <div class="timestamp">
                                                         <span class="author">PAM Admin</span>
                                                         <span class="date">11/15/2014<span>
@@ -114,25 +122,7 @@
                                                         <div class="status">
                                                         <h4> Email Sent </h4>
                                                         </div>
-                                                    </li>
-                                                    <li class="li complete">
-                                                        <div class="timestamp">
-                                                        <span class="author">Aaron Rodgers</span>
-                                                        <span class="date">11/15/2014<span>
-                                                        </div>
-                                                        <div class="status">
-                                                        <h4> SIC Approval </h4>
-                                                        </div>
-                                                    </li>
-                                                    <li class="li">
-                                                        <div class="timestamp">
-                                                        <span class="author">PAM Admin</span>
-                                                        <span class="date">TBD<span>
-                                                        </div>
-                                                        <div class="status">
-                                                        <h4> Shift Completed </h4>
-                                                        </div>
-                                                    </li>
+                                                    </li>-->
                                                 </ul>  
                                             </div>  
                                         </div>  
