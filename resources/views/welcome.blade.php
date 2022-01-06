@@ -224,6 +224,11 @@
 
             var category = $("#select-category").val();
             var search_keyword = $('#search_keyword').val();
+
+            if(emptable!=null){
+                emptable.clear();
+                emptable.destroy();
+            }
            
             var emptable = $('#empTable').DataTable({
                 processing: true,
