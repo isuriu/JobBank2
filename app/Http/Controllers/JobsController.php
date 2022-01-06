@@ -326,7 +326,7 @@ class JobsController extends Controller
         $records = DB::table('jobs')
         ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
         ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
-        ->whereRaw('FIND_IN_SET('.$keyword.',jobs.key_words)')
+        ->whereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)')
         ->select('jobs.*', 'company_details.address')
         ->orderBy($columnName,$columnSortOrder)
         ->skip($start)
