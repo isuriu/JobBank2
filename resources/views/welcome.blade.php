@@ -225,7 +225,8 @@
             var category = $("#select-category").val();
             var search_keyword = $('#search_keyword').val();
 
-            if(emptable!=null){
+            
+            if ( $.fn.DataTable.isDataTable( '#empTable' ) ) {
                 emptable.clear();
                 emptable.destroy();
             }
