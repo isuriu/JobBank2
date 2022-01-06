@@ -323,9 +323,6 @@ class JobsController extends Controller
         $category = $request->get('category');
         $keyword = $request->get('keyword');
 
-        if(!empty($category)){
-
-        }
            
         $records = DB::table('jobs')
         ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
