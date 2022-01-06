@@ -76,16 +76,6 @@
                 </div>
             </div>
         </section>
-        <div>
-            <table id='empTable' class="single-job-items" width='100%' border="1" style='border-collapse: collapse;border: none;'>
-                <thead>
-                    <tr>
-                    <td>S.no</td>
-                    <td>Username</td>
-                    </tr>
-                </thead>
-            </table>
-        </div>
         <br>
         <div class="container">
             <!-- Tab links -->
@@ -208,6 +198,21 @@
 				<div class="step-spacer"></div>
 			</div><br>
 		</div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <table id='empTable' class="single-job-items" width='100%' border="1" style='border-collapse: collapse;border: none;'>
+                    <thead>
+                        <tr>
+                        <td>S.no</td>
+                        <td>Username</td>
+                        </tr>
+                    </thead>
+                </table>
+                </div>
+            </div>
+        </div>
 
         
         @include('layouts/scripts')
@@ -284,6 +289,7 @@
 
             $(document).on("click","#submit",function() {
                 dataTableLoad();
+                $("#exampleModal").modal('show');
             });
         });
       
