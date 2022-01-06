@@ -323,26 +323,55 @@ class JobsController extends Controller
         $category = $request->get('category');
         $keyword = $request->get('keyword');
 
+        if(!empty($category) && !empty($keyword)){
+            $records = DB::table('jobs')
+            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+            ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+            ->whereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)')
+            ->select('jobs.*', 'company_details.address')
+            ->orderBy($columnName,$columnSortOrder)
+            ->skip($start)
+            ->take($rowperpage)
+            ->get();   
+            
+            $totalRecordswithFilter = DB::table('jobs')
+            ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+            ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+            ->whereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)')
+            ->select('jobs.*', 'company_details.address')->count();
+        }else{
+            if(!empty($category)){
+                $records = DB::table('jobs')
+                ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+                ->select('jobs.*', 'company_details.address')
+                ->orderBy($columnName,$columnSortOrder)
+                ->skip($start)
+                ->take($rowperpage)
+                ->get();   
+                
+                $totalRecordswithFilter = DB::table('jobs')
+                ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+                ->select('jobs.*', 'company_details.address')->count();
+            }else{
+                $records = DB::table('jobs')
+                ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                ->whereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)')
+                ->select('jobs.*', 'company_details.address')
+                ->orderBy($columnName,$columnSortOrder)
+                ->skip($start)
+                ->take($rowperpage)
+                ->get();   
+                
+                $totalRecordswithFilter = DB::table('jobs')
+                ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                ->whereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)')
+                ->select('jobs.*', 'company_details.address')->count();
+            }
+        }
            
-        $records = DB::table('jobs')
-        ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-        ->where(function($query) {
-            $query->whereRaw('FIND_IN_SET("'.$category.'",jobs.categories)')
-                ->orwhereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)');
-        })
-        ->select('jobs.*', 'company_details.address')
-        ->orderBy($columnName,$columnSortOrder)
-        ->skip($start)
-        ->take($rowperpage)
-        ->get();   
         
-        $totalRecordswithFilter = DB::table('jobs')
-        ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-        ->where(function($query) {
-            $query->whereRaw('FIND_IN_SET("'.$category.'",jobs.categories)')
-                ->orwhereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)');
-        })
-        ->select('jobs.*', 'company_details.address')->count();
             
 
         $data_arr = array();
