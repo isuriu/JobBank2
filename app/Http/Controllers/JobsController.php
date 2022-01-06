@@ -326,7 +326,7 @@ class JobsController extends Controller
         if(!empty($category) && !empty($keyword)){
             $records = DB::table('jobs')
             ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-            ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+            ->whereRaw('FIND_IN_SET("'.$category.'",jobs.categories)')
             ->whereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)')
             ->select('jobs.*', 'company_details.address')
             ->orderBy($columnName,$columnSortOrder)
@@ -336,14 +336,14 @@ class JobsController extends Controller
             
             $totalRecordswithFilter = DB::table('jobs')
             ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-            ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+            ->whereRaw('FIND_IN_SET("'.$category.'",jobs.categories)')
             ->whereRaw('FIND_IN_SET("'.$keyword.'",jobs.key_words)')
             ->select('jobs.*', 'company_details.address')->count();
         }else{
             if(!empty($category)){
                 $records = DB::table('jobs')
                 ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-                ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+                ->whereRaw('FIND_IN_SET("'.$category.'",jobs.categories)')
                 ->select('jobs.*', 'company_details.address')
                 ->orderBy($columnName,$columnSortOrder)
                 ->skip($start)
@@ -352,7 +352,7 @@ class JobsController extends Controller
                 
                 $totalRecordswithFilter = DB::table('jobs')
                 ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-                ->whereRaw('FIND_IN_SET('.$category.',jobs.categories)')
+                ->whereRaw('FIND_IN_SET("'.$category.'",jobs.categories)')
                 ->select('jobs.*', 'company_details.address')->count();
             }else{
                 $records = DB::table('jobs')
