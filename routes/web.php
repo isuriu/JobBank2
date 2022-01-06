@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+Route::get('/','App\Http\Controllers\JobsController@getData3')->name('welcome');
 
 Route::get('/post-resume', function () {
     return view('post_resume');

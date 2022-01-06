@@ -555,6 +555,20 @@ class JobsController extends Controller
         return view('dashboard', compact('applied_count','applied_data'));
     }
 
+    public function getData3()
+    {
+        $myArray=DB::table('jobs')
+                    ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
+                    ->select('jobs.*', 'company_details.address')
+                    ->get();
+                    
+        $jobdata = $this->paginate($myArray);
+
+        $categories = job_categories::all();
+        
+        return view('welcome', compact('jobdata','categories'));
+    }
+
 
 
 }
