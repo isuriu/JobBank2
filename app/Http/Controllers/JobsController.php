@@ -596,7 +596,7 @@ class JobsController extends Controller
     {
         $job_count=DB::table('jobs')->count();
         $user_count = DB::table('users')->count();
-        $applied_count = applied_jobs::where($condition_arr)->count();
+        $applied_count = DB::table('applied_jobs')->count();
 
         $categories = job_categories::all();
         
