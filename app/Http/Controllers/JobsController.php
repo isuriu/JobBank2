@@ -5,6 +5,7 @@ use App\Models\Job;
 use App\Models\company_details;
 use App\Models\applied_jobs;
 use App\Models\job_categories;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
@@ -593,16 +594,12 @@ class JobsController extends Controller
 
     public function getData3()
     {
-        $myArray=DB::table('jobs')
-                    ->leftJoin('company_details', 'jobs.create_user', '=', 'company_details.email')
-                    ->select('jobs.*', 'company_details.address')
-                    ->get();
-                    
-        $jobdata = $this->paginate($myArray);
+        $job_count=DB::table('jobs')->count();
+        $applied_count = DB::table('users')->count();
 
         $categories = job_categories::all();
         
-        return view('welcome', compact('jobdata','categories'));
+        return view('welcome', compact('categories','job_count','user_count'));
     }
 
 

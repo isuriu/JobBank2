@@ -114,8 +114,8 @@
                     </div>
                     <div style="padding: 0 85px 100px 80px;">
                         <ul id="counter">
-                                <li><div class="counter-value" data-count="15" style="display: inline-block;">0</div><div style="display: inline-block;">K</div><span style="display: block;">Job Offers</span></li>
-                                <li><div class="counter-value" data-count="4982">3000</div><span style="display: block;">Members</span></li>
+                                <li><div class="counter-value" data-count="15" style="display: inline-block;">{{job_count}}</div><div style="display: inline-block;"></div><span style="display: block;">Job Offers</span></li>
+                                <li><div class="counter-value" data-count="4982">{{job_count}}</div><span style="display: block;">Members</span></li>
                                 <li><div class="counter-value" data-count="768">600</div><span style="display: block;">Resumes Posted</span></li>
                         </ul>
                     </div> 
@@ -291,8 +291,8 @@
             });
 
             $(document).on("click","#submit",function() {
-                dataTableLoad();
-                $("#exampleModal").modal('show');
+                //dataTableLoad();
+                //$("#exampleModal").modal('show');
             });
         });
       
