@@ -570,7 +570,7 @@ class JobsController extends Controller
         //$applied_jobs = applied_jobs::where($condition_arr)->get();
 
         $applied_jobs = DB::table('applied_jobs')
-                ->leftJoin('jobs', 'applied_jobs.job_id', '=', 'jobs.job_id')
+                ->leftJoin('jobs', 'applied_jobs.job_id', '=', 'jobs.id')
                 ->where('applied_jobs.email', $logged_user)
                 ->select('applied_jobs.*', 'jobs.expected_salary')
                 ->get();
