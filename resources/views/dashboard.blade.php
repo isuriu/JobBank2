@@ -194,15 +194,15 @@
 }
 
 .li.complete .status {
-    border-top: 2px solid #66DC71;
+    border-top: 2px solid #ee7928;
 }
 .li.complete .status:before {
-    background-color: #66DC71;
+    background-color: #ee7928;
     border: none;
     transition: all 200ms ease-in;
 }
     .li.complete .status h4 {
-    color: #66DC71;
+    color: #ee7928;
 }
 
 @media (min-device-width: 320px) and (max-device-width: 700px) {
