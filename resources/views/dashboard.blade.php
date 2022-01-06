@@ -110,7 +110,7 @@
                                                         </li>
                                                     @endforeach
                                                 @else
-                                                    <span>No data found</span>
+                                                    <span>No Jobs Applied Yet</span>
                                                 @endif
                                                     
                                                     
