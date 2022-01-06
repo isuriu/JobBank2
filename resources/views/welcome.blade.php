@@ -114,9 +114,9 @@
                     </div>
                     <div style="padding: 0 85px 100px 80px;">
                         <ul id="counter">
-                                <li><div class="counter-value" data-count="15" style="display: inline-block;">{{job_count}}</div><div style="display: inline-block;"></div><span style="display: block;">Job Offers</span></li>
-                                <li><div class="counter-value" data-count="4982">{{job_count}}</div><span style="display: block;">Members</span></li>
-                                <li><div class="counter-value" data-count="768">{{applied_count}}</div><span style="display: block;">Resumes Posted</span></li>
+                                <li><div class="counter-value" data-count="15" style="display: inline-block;">{{$job_count}}</div><div style="display: inline-block;"></div><span style="display: block;">Job Offers</span></li>
+                                <li><div class="counter-value" data-count="4982">{{$user_count}}</div><span style="display: block;">Members</span></li>
+                                <li><div class="counter-value" data-count="768">{{$applied_count}}</div><span style="display: block;">Resumes Posted</span></li>
                         </ul>
                     </div> 
                 </div>
