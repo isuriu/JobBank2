@@ -587,10 +587,13 @@ class JobsController extends Controller
 
         $condition_arr = ['email' => $logged_user];
         $applied_count = applied_jobs::where($condition_arr)->count();
-
         $applied_data = applied_jobs::where($condition_arr)->orderBy('created_at', 'DESC')->skip(0)->take(5)->get();
+        $user_category = user_details::where($condition_arr)->select('categories')->get();
+        
+        
+        $category_jobs = jobs::whereRaw('FIND_IN_SET("'.$user_category.'",jobs.categories)')->select('job_title')->get();
   
-        return view('dashboard', compact('applied_count','applied_data'));
+        return view('dashboard', compact('applied_count','applied_data','category_jobs'));
     }
 
     public function getData3()

@@ -136,6 +136,21 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="card-text">Top Recommended Jobs(from user main category)</p>
+                            @if (count($category_jobs) > 0)
+                                @foreach($category_jobs as $cat)
+                                    <li class="li complete">
+                                        <div class="timestamp">
+                                        <span class="author">{{$cat->job_title}}</span>
+                                        <span class="date"><span>
+                                        </div>
+                                        <div class="status">
+                                        <h4>  </h4>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            @else
+                                <span>No Recommended Jobs Yet</span>
+                            @endif
                         </div>
                     </div>
                 </div>
