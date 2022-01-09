@@ -135,22 +135,32 @@
                 <div class="col-lg-4" style="padding-right: 25px;">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-text">Top Recommended Jobs(from user main category)</p>
-                            @if (count($category_jobs) > 0)
-                                @foreach($category_jobs as $cat)
-                                    <li class="li complete">
-                                        <div class="timestamp">
-                                        <span class="author">{{$cat->job_title}}</span>
-                                        <span class="date"><span>
+                            <div class="container">  
+                                <div class="row">  
+                                    <div class="col-md-12">  
+                                        <div class="panel panel-default">  
+                                            <div class="panel-heading">Top Recommended Jobs(from user main category)</div>  
+                                            <div class="panel-body">
+                                                @if (count($category_jobs) > 0)
+                                                    @foreach($category_jobs as $cat)
+                                                        <li class="li complete">
+                                                            <div class="timestamp">
+                                                            <span class="author">{{$cat->job_title}}</span>
+                                                            <span class="date"><span>
+                                                            </div>
+                                                            <div class="status">
+                                                            <h4>  </h4>
+                                                            </div>
+                                                        </li>
+                                                    @endforeach
+                                                @else
+                                                    <span>No Recommended Jobs Yet</span>
+                                                @endif
+                                            </div>
                                         </div>
-                                        <div class="status">
-                                        <h4>  </h4>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            @else
-                                <span>No Recommended Jobs Yet</span>
-                            @endif
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
