@@ -46,7 +46,7 @@
                         </div>
                         <!-- Salary -->
                         <div class="mt-3">
-                            <x-label for="salary" :value="__('Salary (&#165;)*')" /><span style="font-size: 14px;">&#165;</span>
+                            <x-label for="salary" :value="__('Salary *')" style="display: inline-block;"/><span style="font-size: 14px;display: inline-block;">&#165;</span>
 
                             <x-input id="salary" class="block mt-1 w-full" type="text" name="salary" :value="old('salary')" onkeypress="return magicvalidation(event)"/>
                         </div>
