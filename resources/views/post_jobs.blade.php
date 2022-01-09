@@ -125,11 +125,14 @@ $(document).ready(function() {
     });
 });
 
+/*
 var msg = {!! json_encode($message) !!};
 console.log(msg);
 if(msg != ''){
     $.bootstrapPurr(msg,{type: 'success'});
-}
+}*/
+</script> 
+
 
 @if(session()->has('message'))
 
