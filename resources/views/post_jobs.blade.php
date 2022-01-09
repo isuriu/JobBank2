@@ -131,6 +131,25 @@ if(msg != ''){
     $.bootstrapPurr(msg,{type: 'success'});
 }
 
+@if(session()->has('message'))
+
+<script>
+    var msg = {!! json_encode(session()->get('message')) !!};
+    if(msg != ''){
+        $.bootstrapPurr(msg,{type: 'success'});
+    }    
+</script> 
+
+@endif
+
+@if (count($errors) > 0)
+    @foreach ($errors->all() as $error)
+        <script>
+            $.bootstrapPurr({!! json_encode($error) !!},{type: 'danger'}); 
+        </script> 
+    @endforeach
+@endif
+
 
 
 </script> 
