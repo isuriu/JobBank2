@@ -186,5 +186,15 @@ if(msg != ''){
     #select2-key_words-container .select2-selection__choice__display{
         font-size: 16px;
     }
+    label.error {
+        color: #dc3545;
+        font-size: 14px;
+    }
+
+    #job_categories\[\]-error{
+        position: absolute;
+        margin-top: -20px;
+        left: 120px;
+    }
 </style>
 
