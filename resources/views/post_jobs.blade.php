@@ -15,7 +15,7 @@
     <div class="container-fluid">
         <div class="form-card">
             <div class="card-body">
-                <form method="POST" action="/saveJob">
+                <form id="post_job_form" method="POST" action="/saveJob">
                     @csrf
 
                     <div class="form-card-inner">
@@ -30,25 +30,25 @@
                         <div class="mt-2">
                             <x-label for="job_title" :value="__('Job Title *')" />
 
-                            <x-input id="job_title" class="block mt-1 w-full" type="text" name="job_title" :value="old('job_title')" required autofocus />
+                            <x-input id="job_title" class="block mt-1 w-full" type="text" name="job_title" :value="old('job_title')" autofocus />
                         </div>
                         <!-- Job Description -->
                         <div class="mt-3">
                             <x-label for="job_desc" :value="__('Job Description *')" />
 
-                            <textarea name="job_desc" class="text-area" id="job_desc" required></textarea>
+                            <textarea name="job_desc" class="text-area" id="job_desc"></textarea>
                         </div>
                         <!-- Job Location -->
                         <div class="mt-3">
                             <x-label for="job_location" :value="__('Job Location *')" />
 
-                            <textarea name="job_location" class="text-area" id="job_location" required></textarea>
+                            <textarea name="job_location" class="text-area" id="job_location"></textarea>
                         </div>
                         <!-- Salary -->
                         <div class="mt-3">
                             <x-label for="salary" :value="__('Salary *')" />
 
-                            <x-input id="salary" class="block mt-1 w-full" type="text" name="salary" :value="old('salary')" required autofocus />
+                            <x-input id="salary" class="block mt-1 w-full" type="text" name="salary" :value="old('salary')" onkeypress="return magicvalidation(event)"/>
                         </div>
                         <!-- Categories -->
                         <div class="mt-3">
@@ -65,7 +65,7 @@
                         <div class="mt-3">
                             <x-label for="job_type" :value="__('Job Type *')" />
 
-                            <select name="job_type" class="form-select" id="job_type" required>
+                            <select name="job_type" class="form-select" id="job_type">
                                 <option value="" selected disabled>Select your choice</option>
                                 <option value="F">Full Time</option>
                                 <option value="P">Part Time</option>
@@ -75,13 +75,13 @@
                         <div class="mt-2">
                             <x-label for="closing_date" :value="__('Closing Date *')" />
 
-                            <x-input id="closing_date" class="block mt-1 w-full" type="date" name="closing_date" :value="old('closing_date')" required/>
+                            <input type="number" id="closing_date" class="block mt-1 w-full" type="date" name="closing_date" :value="old('closing_date')"/>
                         </div>
                         <!-- Requirements -->
                         <div class="mt-3">
                             <x-label for="requirements" :value="__('Requirements *')" />
 
-                            <textarea name="requirements" class="text-area" id="requirements" required></textarea>
+                            <textarea name="requirements" class="text-area" id="requirements"></textarea>
                         </div>
                         <!-- Key Words -->
                         <div class="mt-2">
@@ -108,6 +108,7 @@
 </x-app-layout>
 
 <script src="js/jquery-bootstrap-purr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -134,6 +135,30 @@ if(msg != ''){
 
 </script> 
 
+<script>
+
+    function magicvalidation(e){
+        var k;
+        document.all ? k = e.keyCode : k = e.which;
+        return (k == 8 || k == 32 || (k >= 48 && k <= 57));
+    }
+
+    $("#post_job_form").validate({
+
+        rules: {
+            job_title: "required",
+            job_desc: "required",
+            job_location: "required",
+            salary: "required",
+            "job_categories[]": "required",
+            job_type: "required",
+            closing_date: "required",
+            "job_categories[]": "required",
+            requirements: "required",
+        }
+    });
+
+</script>
 
 <style>
     #select2-key_words-container .select2-selection__choice__remove{
