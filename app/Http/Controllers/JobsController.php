@@ -588,6 +588,7 @@ class JobsController extends Controller
         $condition_arr = ['email' => $logged_user];
 
         $user_role = DB::table('users')->where($condition_arr)->select('role')->get();
+        $login_role = $user_role[0]->role;
 
         if($user_role[0]->role == 'USER'){
             $applied_count = applied_jobs::where($condition_arr)->count();
@@ -602,7 +603,7 @@ class JobsController extends Controller
         $category_jobs = array();
         
   
-        return view('dashboard', compact('applied_count','applied_data','category_jobs'));
+        return view('dashboard', compact('login_role','applied_count','applied_data','category_jobs'));
     }
 
     public function getData3()
