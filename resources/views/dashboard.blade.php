@@ -140,7 +140,7 @@
                                     <div class="col-md-12">  
                                         <div class="panel panel-default">  
                                             <div class="panel-heading">Top Recommended Jobs(from user main category)</div>  
-                                            <div class="panel-body">
+                                            <div class="panel-body" style="min-height: 325px;">
                                                 @if (count($category_jobs) > 0)
                                                     @foreach($category_jobs as $cat)
                                                         <li class="li complete">
@@ -154,7 +154,9 @@
                                                         </li>
                                                     @endforeach
                                                 @else
-                                                    <span>No Recommended Jobs Yet</span>
+                                                    <div style="text-align: center;padding-top: 150px;">
+                                                        <span>No Recommended Jobs Yet</span>
+                                                    </div>
                                                 @endif
                                             </div>
                                         </div>
