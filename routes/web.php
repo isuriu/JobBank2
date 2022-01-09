@@ -45,9 +45,9 @@ Route::get('/about', function () {
 /*Route::get('/applied_jobs', function () {
     return view('applied_jobs');
 });*/
-Route::get('/applied_jobs', 'App\Http\Controllers\JobsController@getUserAppliedJobs');
+Route::get('/applied_jobs', 'App\Http\Controllers\JobsController@getUserAppliedJobs')->middleware('auth');
 
-Route::get('/find_jobs','App\Http\Controllers\JobsController@getData');
+Route::get('/find_jobs','App\Http\Controllers\JobsController@getData')->middleware('auth');
 
 //Route::get('/ajax_get_jobs','App\Http\Controllers\JobsController@getAjaxData');
 Route::get('/ajax_get_jobs','App\Http\Controllers\JobsController@getAjaxData')->name('ajax_get_jobs');
@@ -56,7 +56,7 @@ Route::get('/ajax_get_jobs2','App\Http\Controllers\JobsController@getAjaxData2')
 
 Route::get('/profile', function () {
     return view('profile');
-});
+})->middleware('auth');
 
 Route::get('/dashboard', [App\Http\Controllers\JobsController::class, 'getDashboardData'])->middleware(['verified'])->name('dashboard');
 
