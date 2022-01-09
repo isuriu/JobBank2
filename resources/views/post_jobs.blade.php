@@ -52,7 +52,7 @@
                         </div>
                         <!-- Categories -->
                         <div class="mt-3">
-                        <x-label for="salary" :value="__('Categories *')" />
+                        <x-label for="salary" :value="__('Categories *')" /><span class="text-custom">&#165;</span>
                             <br><br>
                             @foreach($categories as $category)
                             <div class="form-check">
@@ -75,7 +75,7 @@
                         <div class="mt-2">
                             <x-label for="closing_date" :value="__('Closing Date *')" />
 
-                            <input type="number" id="closing_date" class="block mt-1 w-full" type="date" name="closing_date" :value="old('closing_date')"/>
+                            <input id="closing_date" class="block mt-1 w-full" type="date" name="closing_date" :value="old('closing_date')"/>
                         </div>
                         <!-- Requirements -->
                         <div class="mt-3">
