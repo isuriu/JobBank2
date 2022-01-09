@@ -46,13 +46,13 @@
                         </div>
                         <!-- Salary -->
                         <div class="mt-3">
-                            <x-label for="salary" :value="__('Salary *')" />
+                            <x-label for="salary" :value="__('Salary *')" /><span style="font-size: 14px;">&#165;</span>
 
                             <x-input id="salary" class="block mt-1 w-full" type="text" name="salary" :value="old('salary')" onkeypress="return magicvalidation(event)"/>
                         </div>
                         <!-- Categories -->
                         <div class="mt-3">
-                        <x-label for="salary" :value="__('Categories *')" /><span class="text-custom">&#165;</span>
+                        <x-label for="salary" :value="__('Categories *')" />
                             <br><br>
                             @foreach($categories as $category)
                             <div class="form-check">
