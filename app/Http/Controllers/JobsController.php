@@ -592,6 +592,7 @@ class JobsController extends Controller
 
         $user_role = DB::table('users')->where($condition_arr)->select('role')->get();
         $login_role = $user_role[0]->role;
+        $catejobs = array();
 
         if($user_role[0]->role == 'USER'){
             $applied_count = applied_jobs::where($condition_arr)->count();
@@ -600,8 +601,9 @@ class JobsController extends Controller
             $user_cat = $user_category[0]->categories;
             $cat_arr = explode(",",$user_cat);
             foreach($cat_arr as $val){
-                $category_jobs[] = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$val.'",jobs.categories)')->select('job_title','company_name','closing_date')->get();
+                $catejobs[] = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$val.'",jobs.categories)')->select('job_title','company_name','closing_date')->get();
             }
+            $category_jobs = $catejobs;
             
         }else{
             $applied_count = 0;
