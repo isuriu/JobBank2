@@ -140,13 +140,13 @@
                                     <div class="col-md-12">  
                                         <div class="panel panel-default">  
                                             <div class="panel-heading">Top Recommended Jobs(from user main category)</div>  
-                                            <div class="panel-body" style="min-height: 325px;">
+                                            <div class="panel-body" style="min-height: 325px;padding-top: 20px;">
                                                 @if (count($category_jobs) > 0)
                                                     @foreach($category_jobs as $cat)
                                                         <div style="min-height: 60px;">
                                                             <span style="font-size: 18px;font-weight: bold;margin-top: 10px;">{{$cat->job_title}}</span><br>
-                                                            <span style="font-size: 18px;font-weight: bold;margin-top: 10px;">{{$cat->company_name}}</span>
-                                                            <span style="font-size: 18px;font-weight: bold;margin-top: 10px;">{{$cat->closing_date}}</span>
+                                                            <span style="margin-right: 35px;">{{$cat->company_name}}</span>
+                                                            <span style="color:red">{{$cat->closing_date}}</span>
                                                         </div>
                                                     @endforeach
                                                 @else
