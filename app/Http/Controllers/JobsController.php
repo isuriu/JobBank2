@@ -604,6 +604,7 @@ class JobsController extends Controller
                 $catejobs[] = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$val.'",jobs.categories)')->select('job_title','company_name','closing_date')->get();
             }
             $category_jobs = $catejobs;
+            $category_jobs = array();
             
         }else{
             $applied_count = 0;
