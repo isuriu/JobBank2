@@ -33,8 +33,9 @@ class JobsController extends Controller
         ]);
 
         $login_email = $request->login_email;
-        $company_details = company_details::where('email','=',$login_email)->get('company_name');
+        $company_details = company_details::where('email','=',$login_email)->get('company_name','id');
         $company_name = $company_details[0]->company_name;
+        $company_id = $company_details[0]->id;
 
         $jobId = $this->getNextJobID(); 
 
@@ -61,6 +62,8 @@ class JobsController extends Controller
         $jobs->closing_date = $request->closing_date;
         $jobs->requirements = $request->requirements;
         $jobs->key_words = $keyword_list;
+        $jobs->company_email = $login_email;
+        $jobs->company_id = $company_id;
         $jobs->create_user = $login_email;
 
         $jobs->save();
@@ -618,6 +621,15 @@ class JobsController extends Controller
         return view('welcome', compact('categories','job_count','user_count','applied_count','company_count'));
     }
 
+    public function getPosted()
+    {
+        $logged_user = Auth::user()->email;
 
+        $condition_arr = ['company_email' => $logged_user];
+
+        $job_data = DB::table('jobs')->where($condition_arr)->select('jobs.*')->get();
+        
+        return view('posted_jobs', compact('job_data'));
+    }
 
 }

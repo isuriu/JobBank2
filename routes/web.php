@@ -33,10 +33,11 @@ Route::get('/post_jobs', function () {
     return view('post_jobs')->with('categories',$data)->with('message','');
 });
 
-Route::get('/posted-jobs', function () {
+/*Route::get('/posted_jobs', function () {
     $data1=App\Models\Job::all();
     return view('posted_jobs')->with('job_data',$data1);
-});
+});*/
+Route::get('/posted_jobs','App\Http\Controllers\JobsController@getPosted');
 
 Route::get('/about', function () {
     return view('about');

@@ -39,7 +39,7 @@
                 </li>
             @else
                 <li>
-                    <a href="{{ url('../posted-jobs') }}" class="{{ (request()->is('posted-jobs')) ? 'active' : '' }}">
+                    <a href="{{ url('../posted_jobs') }}" class="{{ (request()->is('posted_jobs')) ? 'active' : '' }}">
                         <span class="icon"><i class="fas fa-desktop"></i></span>
                         <span class="item">Posted Jobs</span>
                         <span class="mini-icon"><i class="fas fa-desktop"></i></span>
