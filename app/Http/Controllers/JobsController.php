@@ -597,7 +597,7 @@ class JobsController extends Controller
             $applied_count = applied_jobs::where($condition_arr)->count();
             $applied_data = applied_jobs::where($condition_arr)->orderBy('created_at', 'DESC')->skip(0)->take(5)->get();
             $user_category = DB::table('user_details')->where($condition_arr)->select('categories')->get();
-            $category_jobs = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$user_category[0]->categories.'",jobs.categories)')->select('job_title')->get();
+            $category_jobs = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$user_category[0]->categories.'",jobs.categories)')->select('job_title','company_name','closing_date')->get();
         }else{
             $applied_count = 0;
             $applied_data = array();

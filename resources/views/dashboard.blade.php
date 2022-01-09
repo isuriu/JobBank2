@@ -143,8 +143,10 @@
                                             <div class="panel-body" style="min-height: 325px;">
                                                 @if (count($category_jobs) > 0)
                                                     @foreach($category_jobs as $cat)
-                                                        <div>
-                                                            <span>{{$cat->job_title}}</span>
+                                                        <div style="min-height: 60px;">
+                                                            <span style="font-size: 18px;font-weight: bold;margin-top: 10px;">{{$cat->job_title}}</span><br>
+                                                            <span style="font-size: 18px;font-weight: bold;margin-top: 10px;">{{$cat->company_name}}</span>
+                                                            <span style="font-size: 18px;font-weight: bold;margin-top: 10px;">{{$cat->closing_date}}</span>
                                                         </div>
                                                     @endforeach
                                                 @else
