@@ -159,7 +159,7 @@ if(msg != ''){
     function magicvalidation(e){
         var k;
         document.all ? k = e.keyCode : k = e.which;
-        return (k == 8 || k == 32 || (k >= 48 && k <= 57));
+        return (k == 8 || (k >= 48 && k <= 57));
     }
 
     $("#post_job_form").validate({
