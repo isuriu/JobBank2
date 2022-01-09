@@ -143,15 +143,9 @@
                                             <div class="panel-body" style="min-height: 325px;">
                                                 @if (count($category_jobs) > 0)
                                                     @foreach($category_jobs as $cat)
-                                                        <li class="li complete">
-                                                            <div class="timestamp">
-                                                            <span class="author">{{$cat->job_title}}</span>
-                                                            <span class="date"><span>
-                                                            </div>
-                                                            <div class="status">
-                                                            <h4>  </h4>
-                                                            </div>
-                                                        </li>
+                                                        <div>
+                                                            <span>{{$cat->job_title}}</span>
+                                                        </div>
                                                     @endforeach
                                                 @else
                                                     <div style="text-align: center;padding-top: 150px;">
