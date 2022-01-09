@@ -586,12 +586,21 @@ class JobsController extends Controller
         $logged_user = Auth::user()->email;
 
         $condition_arr = ['email' => $logged_user];
-        $applied_count = applied_jobs::where($condition_arr)->count();
-        $applied_data = applied_jobs::where($condition_arr)->orderBy('created_at', 'DESC')->skip(0)->take(5)->get();
-        $user_category = DB::table('user_details')->where($condition_arr)->select('categories')->get();
+
+        $user_role = DB::table('users')->where($condition_arr)->select('role')->get();
+
+        if($user_role[0]->role == 'USER'){
+            $applied_count = applied_jobs::where($condition_arr)->count();
+            $applied_data = applied_jobs::where($condition_arr)->orderBy('created_at', 'DESC')->skip(0)->take(5)->get();
+            $user_category = DB::table('user_details')->where($condition_arr)->select('categories')->get();
+            $category_jobs = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$user_category[0]->categories.'",jobs.categories)')->select('job_title')->get();
+        }else{
+
+        }$applied_count = 0;
+        $applied_data = array();
+        //$user_category = DB::table('user_details')->where($condition_arr)->select('categories')->get();
+        $category_jobs = array();
         
-        
-        $category_jobs = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$user_category[0]->categories.'",jobs.categories)')->select('job_title')->get();
   
         return view('dashboard', compact('applied_count','applied_data','category_jobs'));
     }
