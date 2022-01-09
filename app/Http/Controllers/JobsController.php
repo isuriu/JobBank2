@@ -599,11 +599,11 @@ class JobsController extends Controller
             $user_category = DB::table('user_details')->where($condition_arr)->select('categories')->get();
             $category_jobs = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$user_category[0]->categories.'",jobs.categories)')->select('job_title')->get();
         }else{
-
-        }$applied_count = 0;
-        $applied_data = array();
-        //$user_category = DB::table('user_details')->where($condition_arr)->select('categories')->get();
-        $category_jobs = array();
+            $applied_count = 0;
+            $applied_data = array();
+            //$user_category = DB::table('user_details')->where($condition_arr)->select('categories')->get();
+            $category_jobs = array();
+        }
         
   
         return view('dashboard', compact('login_role','applied_count','applied_data','category_jobs'));
