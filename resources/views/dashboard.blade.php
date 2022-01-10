@@ -87,6 +87,7 @@
         <br>
         <div>
             <div class="row">
+                @if ($login_role == 'USER')
                 <div class="col-lg-8" style="padding-left: 25px;">
                     <div class="card">
                         <div class="card-body">
@@ -94,7 +95,7 @@
                                 <div class="row">  
                                     <div class="col-md-12">  
                                         <div class="panel panel-default">  
-                                            <div class="panel-heading"></div>  
+                                            <div class="panel-heading">Applied Jobs</div>  
                                             <div class="panel-body">  
                                                 <ul class="timeline" id="timeline">
                                                 @if (count($applied_data) > 0)
@@ -162,6 +163,43 @@
                         </div>
                     </div>
                 </div>
+                @else
+                <div class="col-lg-12" style="padding-left: 25px;">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="container">  
+                                <div class="row">  
+                                    <div class="col-md-12">  
+                                        <div class="panel panel-default">  
+                                            <div class="panel-heading">Recent Jobs</div>  
+                                            <div class="panel-body">  
+                                                <ul class="timeline" id="timeline">
+                                                @if (count($applied_data) > 0)
+                                                    @foreach($applied_data as $cat)
+                                                        <li class="li complete">
+                                                            <div class="timestamp">
+                                                            <span class="author">{{$cat->job_title}}</span>
+                                                            <span class="date">{{$cat->closing_date}}<span>
+                                                            </div>
+                                                            <div class="status">
+                                                            <h4>  </h4>
+                                                            </div>
+                                                        </li>
+                                                    @endforeach
+                                                @else
+                                                    <span>No recent jobs Yet</span>
+                                                @endif
+                                                    
+                                                </ul>  
+                                            </div>  
+                                        </div>  
+                                    </div>  
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
             </div>
         </div>
 
