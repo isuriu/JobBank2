@@ -48,7 +48,7 @@
                 <li>
                     <a href="{{ url('../post_jobs') }}" class="{{ (request()->is('post_jobs')) ? 'active' : '' }}">
                         <span class="icon"><i class="fas fa-user-friends"></i></span>
-                        <span class="item">Create new Job</span>
+                        <span class="item">Post a New Job</span>
                         <span class="mini-icon"><i class="fas fa-user-friends"></i></span>
                     </a>
                 </li>
