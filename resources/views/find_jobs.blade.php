@@ -246,3 +246,9 @@ function fetch_data(page){
 
     });
 </script>
+
+<style>
+#empTable tr{
+    border: 1px solid;
+}
+</style>
