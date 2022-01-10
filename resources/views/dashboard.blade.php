@@ -19,12 +19,23 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
+                            @if ($login_role == 'USER')
                             <div class="col-lg-4">
                                 <img src="img/icons/dash-ic1.png" style="width: 75px;margin: auto;">  
                             </div>
                             <div class="col-lg-6" style="text-align: center;">
                                 <h5 class="card-title">Applied Jobs</h5>
                                 <p class="card-text" style="font-size: 30px;">{{$applied_count}}</p>
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+                            @else
+                            <div class="col-lg-4">
+                                <img src="img/icons/dash-ic1.png" style="width: 75px;margin: auto;">  
+                            </div>
+                            <div class="col-lg-6" style="text-align: center;">
+                                <h5 class="card-title">Posted Jobs</h5>
+                                <p class="card-text" style="font-size: 30px;">0</p>
                             </div>
                             <div class="col-lg-2">
                             </div>
