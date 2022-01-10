@@ -599,12 +599,12 @@ class JobsController extends Controller
             $applied_data = applied_jobs::where($condition_arr)->orderBy('created_at', 'DESC')->skip(0)->take(5)->get();
             $user_category = DB::table('user_details')->where($condition_arr)->select('categories')->get();
             $user_cat = $user_category[0]->categories;
-            $cat_arr = explode(",",$user_cat);
+            /*$cat_arr = explode(",",$user_cat);
             foreach($cat_arr as $val){
                 $catejobs[] = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$val.'",jobs.categories)')->select('job_title','company_name','closing_date')->get();
             }
-            $category_jobs = $catejobs;
-            $category_jobs = array();
+            $category_jobs = $catejobs;*/
+            $category_jobs = DB::table('jobs')->whereRaw('FIND_IN_SET("'.$user_cat.'",jobs.categories)')->select('job_title','company_name','closing_date')->get();
             
         }else{
             $applied_count = 0;
