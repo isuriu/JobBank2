@@ -16,7 +16,7 @@
                         <i class="fas fa-map-marker-alt"></i>&nbsp;{{$jobdata->job_location}}
                     </div>
                     <div style="font-size: 15px; margin-top: 20px;">
-                        {{$jobdata->job_description}}
+                        <pre>{{$jobdata->job_description}}</pre>
                     </div>
 
                     <div style="font-size: 15px; margin-top: 20px;">
