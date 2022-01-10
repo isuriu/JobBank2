@@ -39,6 +39,7 @@
                             </div>
                             <div class="col-lg-2">
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>
