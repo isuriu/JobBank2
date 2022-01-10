@@ -142,7 +142,6 @@
                                         <div class="panel panel-default">  
                                             <div class="panel-heading">Top Recommended Jobs(from user main category)</div>  
                                             <div class="panel-body" style="min-height: 325px;padding-top: 20px;">
-                                            dd($category_jobs);
                                                 @if (count($category_jobs) > 0)
                                                     @foreach($category_jobs as $cat)
                                                         <div style="min-height: 60px;">
