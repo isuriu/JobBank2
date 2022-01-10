@@ -8,7 +8,7 @@
     <br>
     <nav aria-label="breadcrumb" style="padding-left: 15px;">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Created Jobs</li>
+            <li class="breadcrumb-item active" aria-current="page">Posted Jobs</li>
         </ol>
     </nav>
     <div class="container-fluid">
