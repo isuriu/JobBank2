@@ -227,3 +227,9 @@
 
     });
 </script>
+
+<style>
+#empTable tr{
+    border: 1px solid;
+}
+</style>
